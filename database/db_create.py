@@ -1,8 +1,26 @@
-import mysql.connector
-import mysql.connector.errorcode
+"""
+    Classe para gerenciar a criação e conexão com um banco de dados MySQL.
+
+    Esta classe fornece métodos estáticos para:
+    - Estabelecer uma conexão com o servidor MySQL.
+    - Fechar uma conexão com o servidor MySQL.
+    - Verificar a existência de um banco de dados específico e, se não existir, criá-lo.
+
+    A configuração da conexão é obtida a partir do módulo `database.config`,
+    onde as credenciais e informações do banco de dados são armazenadas.
+
+    Métodos:
+        - get_connect: Estabelece uma conexão com o MySQL usando as configurações fornecidas.
+        - get_close: Fecha a conexão com o servidor MySQL.
+        - check_and_create_database: Verifica se um banco de dados com o nome especificado existe e,
+        se não, cria-o.
+    """
+
+from pathlib import Path
 import logging
 from mysql.connector import Error
-from pathlib import Path
+import mysql.connector
+import mysql.connector.errorcode
 from database.config import DATABASE_CONFIG
 
 # Configuração básica do logging para registrar em um arquivo
@@ -17,8 +35,20 @@ logging.basicConfig(
 
 class DBCreate():
 
+    """
+    Classe para gerenciamento da criação e conexão com um banco de dados MySQL.
+    """
+
     @staticmethod
     def get_connect():
+        """
+        Estabelece uma conexão com o servidor MySQL.
+
+        Retorna:
+            mysql.connector.connection_cext.CMySQLConnection: Objeto de conexão com o MySQL
+            se a conexão for bem-sucedida, None caso contrário.
+        """
+
         connection = None
 
         try:
@@ -35,11 +65,19 @@ class DBCreate():
 
         except mysql.connector.Error as error:
             logging.error("Erro ao conectar o banco de dados %s", error)
-            return None
+
+        return None
 
     @staticmethod
     def get_close(conn):
-        """Fecha a conexão com o servidor MySQL."""
+        """
+        Fecha a conexão com o servidor MySQL.
+
+        Args:
+            conn (mysql.connector.connection_cext.CMySQLConnection): 
+                Objeto de conexão com o MySQL a ser fechado.
+        """
+
         if conn is not None and conn.is_connected():
             conn.close()
             logging.info("Conexão fechada.")
@@ -48,9 +86,19 @@ class DBCreate():
 
     @staticmethod
     def check_and_create_database(db_name):
-        """Verifica se um banco de dados existe e, se não, cria-o."""
+        """
+        Verifica se um banco de dados existe e, se não, cria-o.
+
+        Args:
+            db_name (str): Nome do banco de dados a ser verificado e possivelmente criado.
+        """
 
         conn = DBCreate.get_connect()
+
+        if conn is None:
+            logging.error("Não foi possível estabelecer uma conexão com o MySQL.")
+            return
+
         cursor = conn.cursor()
 
         try:
