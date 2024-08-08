@@ -1,0 +1,6 @@
+2024-08-08 10:37:49,296 - INFO - Conexão bem-sucedida!
+2024-08-08 10:37:49,299 - INFO - O banco de dados 'contact-book' não existe.
+2024-08-08 10:37:49,299 - INFO - Criando banco de dados.
+2024-08-08 10:37:49,631 - INFO - Banco de dados 'contact-book' criado com sucesso!
+2024-08-08 10:37:49,632 - INFO - Conexão fechada.
+2024-08-08 10:37:49,632 - INFO - Cursor fechado.

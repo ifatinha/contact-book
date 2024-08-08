@@ -1,2 +1,1 @@
-# Agenda Telefonica
-Agenda telefonica em Python
+# Agenda de contatos em Python

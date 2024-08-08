@@ -7,11 +7,11 @@ Classes:
     Contact: Classe para mapear os dados de um contato telefônico no banco de dados.
 """
 
-from dataclasses import dataclass, field
+from sqlalchemy import Column, Integer, String
+from database.db_connection import Base
 
 
-@dataclass
-class Contact:
+class Contact(Base):
     """
     Classe para mapear os dados de um contato no banco de dados.
 
@@ -20,5 +20,10 @@ class Contact:
         contact_name (str): Nome completo do contato.
     """
 
-    contact_id: int = field(default=None, init=False)
-    contact_name: str
+    __tablename__ = 'contacts'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(120), nullable=False)
+
+    def __repr__(self) -> str:
+        return f"<Contact(id={self.id}, name={self.name})"
