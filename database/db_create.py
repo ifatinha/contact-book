@@ -74,7 +74,7 @@ class DBCreate():
         Fecha a conexão com o servidor MySQL.
 
         Args:
-            conn (mysql.connector.connection_cext.CMySQLConnection): 
+            conn (mysql.connector.connection_cext.CMySQLConnection):
                 Objeto de conexão com o MySQL a ser fechado.
         """
 
