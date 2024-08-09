@@ -10,6 +10,7 @@ Classes:
 from sqlalchemy import Column, Integer, String, ForeignKey, Enum as SQLAEnum
 from database.db_connection import Base
 from enums.email_types import EmailTypes
+from sqlalchemy.orm import relationship
 
 
 class Email(Base):
@@ -23,12 +24,13 @@ class Email(Base):
         contact_id (int): Chave estrangeira associada ao contato.
     """
 
-    __tablename__ = "emails"
+    __tablename__ = 'emails'
 
     id_number = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(120), nullable=False)
     type_email = Column(SQLAEnum(EmailTypes), default=EmailTypes.PERSONAL, nullable=False)
-    contact_id = Column(Integer, ForeignKey("contacts.id"), nullable=False)
+    contact_id = Column(Integer, ForeignKey('contacts.id'))
+    contact = relationship("Contact", back_populates="emails")
 
     def __repr__(self) -> str:
         return (

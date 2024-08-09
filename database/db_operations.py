@@ -31,7 +31,6 @@ Exemplo:
 
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError, OperationalError
 from database.db_connection import get_session
-from classes.contact import Contact
 
 
 class DBOperation():
@@ -126,4 +125,5 @@ class DBOperation():
             return None
         finally:
             if session:
-                session.close()
+                # session.close()
+                pass

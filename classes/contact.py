@@ -11,7 +11,6 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from database.db_connection import Base
 
-
 class Contact(Base):
     """
     Classe para mapear os dados de um contato no banco de dados.
@@ -24,14 +23,13 @@ class Contact(Base):
     """
 
     __tablename__ = 'contacts'
-
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(120), nullable=False)
-    phones = relationship("Phone", backref="contact", cascade="all, delete-orphan")
-    emails = relationship("Email", backref="contact", cascade="all, delete-orphan")
+    phones = relationship("Phone", back_populates="contact", cascade="all, delete-orphan")
+    emails = relationship("Email", back_populates="contact", cascade="all, delete-orphan")
 
     def __repr__(self) -> str:
-        return f"<Contact(id={self.id}, name={self.name})"
+        return f"Contact(id={self.id}, name={self.name})"
 
     def __str__(self) -> str:
         """

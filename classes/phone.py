@@ -10,6 +10,7 @@ Classes:
 from sqlalchemy import Column, Integer, String, ForeignKey, Enum as SQLAEnum
 from database.db_connection import Base
 from enums.phones_types import PhonesTypes
+from sqlalchemy.orm import relationship
 
 
 class Phone(Base):
@@ -25,14 +26,14 @@ class Phone(Base):
         contact_id (int): Chave estrangeira associada ao contato.
     """
 
-    __tablename__ = "phones"
-
+    __tablename__ = 'phones'
     id_number = Column(Integer, primary_key=True, autoincrement=True)
     country_code = Column(String(8), nullable=False)
     ddd = Column(String(8), nullable=False)
     phone_number = Column(String(16), nullable=False)
     type_number = Column(SQLAEnum(PhonesTypes), default=PhonesTypes.MOBILE, nullable=False)
-    contact_id = Column(Integer, ForeignKey("contacts.id"), nullable=False)
+    contact_id = Column(Integer, ForeignKey('contacts.id'))
+    contact = relationship("Contact", back_populates="phones")
 
     def __repr__(self) -> str:
         return (
