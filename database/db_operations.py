@@ -14,11 +14,11 @@ Métodos Estáticos:
 Exceções:
     Captura e trata exceções relacionadas ao SQLAlchemy, incluindo `IntegrityError`,
     `OperationalError`, e `SQLAlchemyError`.
-     
+
 Uso:
     - `DBOperation.session()`: Cria e retorna uma nova sessão para interagir com o banco de dados.
-    - `DBOperation.object_save_db(obj)`: 
-    Adiciona o objeto especificado ao banco de dados e faz commit, tratando exceções em caso de erro.
+    - `DBOperation.object_save_db(obj)`: Adiciona o objeto especificado ao banco de dados e faz commit,
+       tratando exceções em caso de erro.
 
 Exemplo:
     # Criar o esquema
@@ -31,6 +31,7 @@ Exemplo:
 
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError, OperationalError
 from database.db_connection import get_session
+from classes.contact import Contact
 
 
 class DBOperation():
@@ -54,7 +55,7 @@ class DBOperation():
         return get_session()
 
     @staticmethod
-    def object_save_db(obj):
+    def save_obj_db(obj):
         """
         Adiciona um objeto à base de dados e faz commit.
 
@@ -85,3 +86,44 @@ class DBOperation():
             print(f"Erro SQLAlchemy ao adicionar contato: {e}")
         finally:
             session.close()
+
+    @staticmethod
+    def find_objs_db(model):
+        """
+        Busca todos os objetos de uma tabela do banco de dados.
+
+        Parâmetros:
+            model (Base): Classe do modelo a ser consultado,
+            que deve ser uma subclasse de `Base` do SQLAlchemy.
+
+        Retorna:
+            list: Lista de instâncias do modelo consultado.
+
+        Exceções:
+            Rollback e exibição de mensagem de erro em caso de falha na consulta.
+
+        Mensagens:
+            Exibe uma mensagem de erro em caso de falha na consulta.
+        """
+        try:
+            session = DBOperation.session()
+            return session.query(model).all()
+
+        except IntegrityError as e:
+            if session:
+                session.rollback()
+            print(f"Erro de integridade ao adicionar contato: {e}")
+            return None
+        except OperationalError as e:
+            if session:
+                session.rollback()
+            print(f"Erro operacional ao adicionar contato: {e}")
+            return None
+        except SQLAlchemyError as e:
+            if session:
+                session.rollback()
+            print(f"Erro SQLAlchemy ao adicionar contato: {e}")
+            return None
+        finally:
+            if session:
+                session.close()
