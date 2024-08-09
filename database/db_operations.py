@@ -17,8 +17,8 @@ Exceções:
 
 Uso:
     - `DBOperation.session()`: Cria e retorna uma nova sessão para interagir com o banco de dados.
-    - `DBOperation.object_save_db(obj)`: Adiciona o objeto especificado ao banco de dados e faz commit,
-       tratando exceções em caso de erro.
+    - `DBOperation.object_save_db(obj)`: Adiciona o objeto especificado ao banco de dados
+       e faz commit, tratando exceções em caso de erro.
 
 Exemplo:
     # Criar o esquema
