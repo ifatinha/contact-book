@@ -48,4 +48,4 @@ class Phone(Base):
 
         Exemplo: +1 (212) 555-1234 - MOBILE
         """
-        return f"+{self.country_code} ({self.ddd}) {self.phone_number} - {self.type_number.name}"
+        return f"+{self.country_code} ({self.ddd}) {self.phone_number} - {self.type_number}"

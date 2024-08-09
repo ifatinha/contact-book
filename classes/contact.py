@@ -38,9 +38,10 @@ class Contact(Base):
         Retorna uma string legível representando o contato no formato:
         Nome: <name>, Telefones: [<phone1>, <phone2>, ...], E-mails: [<email1>, <email2>, ...]
 
-        Exemplo: Nome: João Silva, Telefones: [+1 (212) 555-1234 - MOBILE, +1 (213) 555-5678 - HOME],
+        Exemplo: Nome: João Silva,
+                 Telefones: [+1 (212) 555-1234 - MOBILE, +1 (213) 555-5678 - HOME],
                  E-mails: [joao.silva@example.com, jsilva@work.com]
         """
         phones_str = ", ".join(str(phone) for phone in self.phones) if self.phones else "Nenhum telefone"
-        emails_str = ", ".join(email.address for email in self.emails) if self.emails else "Nenhum e-mail"
+        emails_str = ", ".join(str(email) for email in self.emails) if self.emails else "Nenhum e-mail"
         return f"Nome: {self.name}, Telefones: [{phones_str}], E-mails: [{emails_str}]"

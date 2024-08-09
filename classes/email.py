@@ -43,4 +43,4 @@ class Email(Base):
 
         Exemplo: joao.silva@example.com - PERSONAL
         """
-        return f"{self.email} - {self.type_email.name}"
+        return f"{self.email} - {self.type_email}"

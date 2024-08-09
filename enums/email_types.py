@@ -19,7 +19,7 @@ class EmailTypes(Enum):
         OTHER = 'Outros'
     """
 
-    PERSONAL = "personal"
-    WORK = "work"
-    SCHOOL = "school"
-    OTHER = "other"
+    PERSONAL = "Pessoal"
+    WORK = "Trabalho"
+    SCHOOL = "Escolar"
+    OTHER = "Outro"
