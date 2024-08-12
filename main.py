@@ -28,7 +28,7 @@ Uso:
 # pip install -r requirements.txt
 
 from util.menu import menu
-from database.db_initializer import initialize_database
+from database.db_initializer import initialize_database, create_tables
 
 
 def app():
@@ -51,6 +51,7 @@ def app():
     """
 
     initialize_database()
+    create_tables()
 
     while True:
         opcao = menu()

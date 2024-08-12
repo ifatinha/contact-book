@@ -2,9 +2,6 @@
     Classe de teste
 """
 
-# from database.db_create import DBCreate
-# DBCreate.check_and_create_database("contact-book")
-
 # from database.db_connection import engine, Base, get_session
 # from classes.contact import Contact
 # from classes.email import Email
