@@ -1,12 +1,16 @@
-2024-08-08 10:37:49,296 - INFO - Conexão bem-sucedida!
-2024-08-08 10:37:49,299 - INFO - O banco de dados 'contact-book' não existe.
-2024-08-08 10:37:49,299 - INFO - Criando banco de dados.
-2024-08-08 10:37:49,631 - INFO - Banco de dados 'contact-book' criado com sucesso!
-2024-08-08 10:37:49,632 - INFO - Conexão fechada.
-2024-08-08 10:37:49,632 - INFO - Cursor fechado.
-2024-08-08 11:54:54,613 - INFO - Conexão bem-sucedida!
-2024-08-08 11:54:54,617 - INFO - O banco de dados 'contact-book' não existe.
-2024-08-08 11:54:54,618 - INFO - Criando banco de dados.
-2024-08-08 11:54:54,761 - INFO - Banco de dados 'contact-book' criado com sucesso!
-2024-08-08 11:54:54,762 - INFO - Conexão fechada.
-2024-08-08 11:54:54,762 - INFO - Cursor fechado.
+2024-08-12 14:20:42,064 - INFO - Conexão bem-sucedida!
+2024-08-12 14:20:42,083 - INFO - O banco de dados 'contact-book' não existe.
+2024-08-12 14:20:42,084 - INFO - Criando banco de dados.
+2024-08-12 14:20:42,262 - INFO - Banco de dados 'contact-book' criado com sucesso!
+2024-08-12 14:20:42,262 - INFO - Conexão fechada.
+2024-08-12 14:20:42,263 - INFO - Cursor fechado.
+2024-08-12 14:21:24,901 - INFO - Conexão bem-sucedida!
+2024-08-12 14:21:24,903 - INFO - O bando de dados 'contact-book' já existe.
+2024-08-12 14:21:24,903 - INFO - Estabelecendo conexão.
+2024-08-12 14:21:24,904 - INFO - Conexão fechada.
+2024-08-12 14:21:24,904 - INFO - Cursor fechado.
+2024-08-12 14:21:36,175 - INFO - Conexão bem-sucedida!
+2024-08-12 14:21:36,177 - INFO - O bando de dados 'contact-book' já existe.
+2024-08-12 14:21:36,177 - INFO - Estabelecendo conexão.
+2024-08-12 14:21:36,178 - INFO - Conexão fechada.
+2024-08-12 14:21:36,178 - INFO - Cursor fechado.

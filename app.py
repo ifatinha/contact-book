@@ -6,12 +6,12 @@
 # DBCreate.check_and_create_database("contact-book")
 
 # from database.db_connection import engine, Base, get_session
-from classes.contact import Contact
-from classes.email import Email
-from classes.phone import Phone
-from enums.phones_types import PhonesTypes
-from enums.email_types import EmailTypes
-from database.db_operations import DBOperation
+# from classes.contact import Contact
+# from classes.email import Email
+# from classes.phone import Phone
+# from enums.phones_types import PhonesTypes
+# from enums.email_types import EmailTypes
+# from database.db_operations import DBOperation
 
 # Criando todas as tabelas do banco de dados (se elas ainda nao existirem)
 # Base.metadata.create_all(engine)
@@ -31,7 +31,7 @@ from database.db_operations import DBOperation
 
 # DBOperation.save_obj_db(new_contact)
 
-contacts = DBOperation.find_objs_db(Contact)
+# contacts = DBOperation.find_objs_db(Contact)
 
-for contact in contacts:
-    print(contact)
+# for contact in contacts:
+#     print(contact)
