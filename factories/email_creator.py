@@ -1,0 +1,3 @@
+class EmailCreator():
+    
+    pass

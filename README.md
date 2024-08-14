@@ -58,4 +58,4 @@ O projeto está organizado em vários diretórios e arquivos, conforme descrito 
 Contribuições são bem-vindas! Por favor, siga as boas práticas ao abrir issues ou pull requests.
 
 5. **Licença**
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo LICENSE para mais detalhes.
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE] para mais detalhes.
