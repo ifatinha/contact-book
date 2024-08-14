@@ -48,6 +48,7 @@ sqlalchemy_file_handler.setLevel(logging.DEBUG)
 sqlalchemy_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
 sqlalchemy_file_handler.setFormatter(sqlalchemy_formatter)
 sqlalchemy_logger.addHandler(sqlalchemy_file_handler)
+sqlalchemy_logger.propagate = False
 sqlalchemy_logger.debug("Sistema de logging configurado corretamente.")
 
 
