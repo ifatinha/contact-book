@@ -43,6 +43,6 @@ class Email(Base):
         Retorna uma string legível representando o e-mail no formato:
         <email> - <type_email>
 
-        Exemplo: joao.silva@example.com - PERSONAL
+        Exemplo: joao.silva@example.com - PESOAL
         """
-        return f"{self.email} - {self.type_email.name}"
+        return f"{self.email} - {self.type_email.value}"

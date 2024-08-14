@@ -33,9 +33,14 @@
 # for contact in contacts:
 #     print(contact)
 
-from factories.phone_creator import PhoneCreator
+# from factories.phone_creator import PhoneCreator
 
-# phone = PhoneCreator.get_phone()
+# # phone = PhoneCreator.get_phone()
 
-phones = PhoneCreator.creator_new_phone()
-print(phones)
+# phones = PhoneCreator.creator_new_phone()
+# print(phones)
+
+from factory.email_creator import EmailCreator
+
+emails = EmailCreator.creator_emails()
+print(emails)

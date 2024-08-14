@@ -14,3 +14,23 @@
 2024-08-12 14:21:36,177 - INFO - Estabelecendo conexão.
 2024-08-12 14:21:36,178 - INFO - Conexão fechada.
 2024-08-12 14:21:36,178 - INFO - Cursor fechado.
+2024-08-14 16:44:20,582 - INFO - package: mysql.connector.plugins
+2024-08-14 16:44:20,583 - INFO - plugin_name: caching_sha2_password
+2024-08-14 16:44:20,583 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 16:44:40,393 - INFO - package: mysql.connector.plugins
+2024-08-14 16:44:40,393 - INFO - plugin_name: caching_sha2_password
+2024-08-14 16:44:40,394 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 16:44:40,398 - INFO - Conexão bem-sucedida!
+2024-08-14 16:44:40,399 - INFO - O banco de dados 'contact-book' não existe.
+2024-08-14 16:44:40,399 - INFO - Criando banco de dados.
+2024-08-14 16:44:40,417 - INFO - Banco de dados 'contact-book' criado com sucesso!
+2024-08-14 16:44:40,418 - INFO - Conexão fechada.
+2024-08-14 16:44:40,418 - INFO - Cursor fechado.
+2024-08-14 16:44:40,425 - INFO - SELECT DATABASE()
+2024-08-14 16:44:40,426 - INFO - [raw sql] {}
+2024-08-14 16:44:40,427 - INFO - SELECT @@sql_mode
+2024-08-14 16:44:40,428 - INFO - [raw sql] {}
+2024-08-14 16:44:40,429 - INFO - SELECT @@lower_case_table_names
+2024-08-14 16:44:40,429 - INFO - [raw sql] {}
+2024-08-14 16:44:40,430 - INFO - BEGIN (implicit)
+2024-08-14 16:44:40,431 - INFO - COMMIT

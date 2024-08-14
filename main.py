@@ -24,8 +24,8 @@ Uso:
     contato, listar contatos, ou encerrar a aplicação.
 """
 
-# pip freeze > config/requirements.txt
-# pip install -r requirements.txt
+# python -m pip freeze > config/requirements.txt
+# python -m pip install -r config/requirements.txt
 
 from util.menu import menu
 from database.db_initializer import initialize_database, create_tables

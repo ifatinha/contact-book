@@ -15,11 +15,9 @@ class EmailTypes(Enum):
     Tipos de Telefone:
         PERSONAL = 'Pessoal'
         WORK = 'Trabalho'
-        SCHOOL = 'Escola'
         OTHER = 'Outros'
     """
 
     PERSONAL = "Pessoal"
     WORK = "Trabalho"
-    SCHOOL = "Escolar"
     OTHER = "Outro"
