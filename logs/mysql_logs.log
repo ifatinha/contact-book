@@ -1114,3 +1114,25 @@ WHERE %(param_1)s = emails.contact_id
 2024-08-14 20:47:30,988 - INFO - DESCRIBE `contact-book`.`emails`
 2024-08-14 20:47:30,989 - INFO - [raw sql] {}
 2024-08-14 20:47:30,991 - INFO - COMMIT
+2024-08-14 20:48:09,327 - INFO - package: mysql.connector.plugins
+2024-08-14 20:48:09,327 - INFO - plugin_name: caching_sha2_password
+2024-08-14 20:48:09,327 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 20:48:09,328 - INFO - Conexão bem-sucedida!
+2024-08-14 20:48:09,329 - INFO - O bando de dados 'contact-book' já existe.
+2024-08-14 20:48:09,330 - INFO - Estabelecendo conexão.
+2024-08-14 20:48:09,330 - INFO - Conexão fechada.
+2024-08-14 20:48:09,330 - INFO - Cursor fechado.
+2024-08-14 20:48:09,336 - INFO - SELECT DATABASE()
+2024-08-14 20:48:09,339 - INFO - [raw sql] {}
+2024-08-14 20:48:09,341 - INFO - SELECT @@sql_mode
+2024-08-14 20:48:09,341 - INFO - [raw sql] {}
+2024-08-14 20:48:09,342 - INFO - SELECT @@lower_case_table_names
+2024-08-14 20:48:09,343 - INFO - [raw sql] {}
+2024-08-14 20:48:09,344 - INFO - BEGIN (implicit)
+2024-08-14 20:48:09,344 - INFO - DESCRIBE `contact-book`.`contacts`
+2024-08-14 20:48:09,345 - INFO - [raw sql] {}
+2024-08-14 20:48:09,346 - INFO - DESCRIBE `contact-book`.`phones`
+2024-08-14 20:48:09,346 - INFO - [raw sql] {}
+2024-08-14 20:48:09,347 - INFO - DESCRIBE `contact-book`.`emails`
+2024-08-14 20:48:09,349 - INFO - [raw sql] {}
+2024-08-14 20:48:09,351 - INFO - COMMIT
