@@ -25,6 +25,7 @@ Exemplo de uso:
     print(phone)
 """
 
+# flake8: noqa: F401
 from classes.contact import Contact
 from classes.phone import Phone
 from classes.email import Email
