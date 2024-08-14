@@ -37,10 +37,9 @@ from pathlib import Path
 import logging
 
 # Configuração do logging
-log_dir = Path(__file__).resolve().parents[1] / "logs2"
+log_dir = Path(__file__).resolve().parents[1] / "util"
 sqlalchemy_log_file = log_dir / "sqlalchemy.log"
-log_dir.mkdir(parents=True, exist_ok=True)
-print(log_dir.mkdir)
+# log_dir.mkdir(parents=True, exist_ok=True)
 
 sqlalchemy_logger = logging.getLogger('sqlalchemy')
 sqlalchemy_file_handler = logging.FileHandler(sqlalchemy_log_file)
