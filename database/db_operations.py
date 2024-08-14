@@ -30,7 +30,6 @@ Exemplo:
 """
 
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError, OperationalError
-from database.db_connection import get_session
 
 
 class DBOperation():
@@ -44,17 +43,7 @@ class DBOperation():
     """
 
     @staticmethod
-    def session():
-        """
-        Cria e retorna uma nova sessão do banco de dados.
-
-        Retorna:
-            session (Session): Instância da sessão SQLAlchemy.
-        """
-        return get_session()
-
-    @staticmethod
-    def save_obj_db(obj):
+    def save_obj_db(obj, session):
         """
         Adiciona um objeto à base de dados e faz commit.
 
@@ -70,7 +59,6 @@ class DBOperation():
             de erro em caso de falha.
         """
         try:
-            session = DBOperation.session()
             session.add(obj)
             session.commit()
             print(f"{obj.__class__.__name__} cadastrado com sucesso!")
@@ -83,11 +71,9 @@ class DBOperation():
         except SQLAlchemyError as e:
             session.rollback()
             print(f"Erro SQLAlchemy ao adicionar classe: {e}")
-        finally:
-            session.close()
 
     @staticmethod
-    def find_objs_db(model):
+    def find_objs_db(model, session):
         """
         Busca todos os objetos de uma tabela do banco de dados.
 
@@ -105,7 +91,7 @@ class DBOperation():
             Exibe uma mensagem de erro em caso de falha na consulta.
         """
         try:
-            session = DBOperation.session()
+
             return session.query(model).all()
 
         except IntegrityError as e:

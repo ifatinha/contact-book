@@ -81,7 +81,7 @@ class PhoneCreator():
 
         while True:
 
-            option = PhoneCreator.get_user_input(prompt=prompt)
+            option = get_user_input(prompt=prompt)
             if option in dict_types_phones:
                 return dict_types_phones[option]
             else:
@@ -114,7 +114,7 @@ class PhoneCreator():
         """
 
         return """  # NOVO TELEFONE ###################
-        [1] - Adicionar telefone
+        [1] - Add telefone
         [0] - Sair
         == > """
 
@@ -133,7 +133,7 @@ class PhoneCreator():
 
         while True:
 
-            option = PhoneCreator._get_user_input(prompt)
+            option = get_user_input(prompt)
 
             if option == 1:
                 phone = PhoneCreator.get_phone()

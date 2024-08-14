@@ -1,46 +1,135 @@
 """
-    Classe de teste
+Módulo de Gerenciamento de Contatos
+
+Este módulo implementa a aplicação de gerenciamento de contatos, proporcionando
+um loop principal que permite ao usuário interagir com o sistema por meio de um menu.
+
+O menu oferece opções para criar um novo contato, buscar um contato, editar, listar contatos existentes,
+ou encerrar a aplicação.
+
+Funções:
+--------
+app() -> None
+    Executa o loop principal da aplicação de gerenciamento de contatos. Exibe
+    um menu de opções para o usuário e aguarda a seleção, executando ações
+    correspondentes com base na escolha.
+
+Uso:
+-----
+    Para executar a aplicação, use o seguinte comando:
+
+    python main.py
+
+    O menu será exibido, permitindo ao usuário selecionar entre criar um novo
+    contato, listar contatos, ou encerrar a aplicação.
 """
 
-# from database.db_connection import engine, Base, get_session
-# from classes.contact import Contact
-# from classes.email import Email
-# from classes.phone import Phone
-# from enums.phones_types import PhonesTypes
-# from enums.email_types import EmailTypes
-# from database.db_operations import DBOperation
+# python -m pip freeze > config/requirements.txt
+# python -m pip install -r config/requirements.txt
 
-# Criando todas as tabelas do banco de dados (se elas ainda nao existirem)
-# Base.metadata.create_all(engine)
+from util.menu import menu
+from database.db_initializer import initialize_database, create_tables
+from database.db_operations import DBOperation
+from factory.contact_creator import ContactCreator
+from classes.contact import Contact
+from database.db_connection import get_session
+from pathlib import Path
+import logging
 
-# new_contact = Contact(name="Marcus Monteiro")
+# Configuração do logging
+log_dir = Path(__file__).resolve().parents[1] / "logs2"
+sqlalchemy_log_file = log_dir / "sqlalchemy.log"
+log_dir.mkdir(parents=True, exist_ok=True)
+print(log_dir.mkdir)
 
-# phone1 = Phone(country_code="+55", ddd="69", phone_number="98051-0109",
-#                type_number=PhonesTypes.MOBILE)
-# phone2 = Phone(country_code="+55", ddd="69", phone_number="2885-4727",
-#                type_number=PhonesTypes.LANDLINE)
+sqlalchemy_logger = logging.getLogger('sqlalchemy')
+sqlalchemy_file_handler = logging.FileHandler(sqlalchemy_log_file)
+sqlalchemy_file_handler.setLevel(logging.DEBUG)
+sqlalchemy_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+sqlalchemy_file_handler.setFormatter(sqlalchemy_formatter)
+sqlalchemy_logger.addHandler(sqlalchemy_file_handler)
+sqlalchemy_logger.debug("Sistema de logging configurado corretamente.")
 
-# email1 = Email(email="joao.silva@example.com", type_email=EmailTypes.PERSONAL)
-# email2 = Email(email="jsilva@empresa.com", type_email=EmailTypes.WORK)
 
-# new_contact.phones = [phone1, phone2]
-# new_contact.emails = [email1, email2]
+def initialize_system():
+    """
+    Inicializa o banco de dados e as tabelas.
+    """
+    initialize_database()
+    create_tables()
 
-# DBOperation.save_obj_db(new_contact)
 
-# contacts = DBOperation.find_objs_db(Contact)
+def session():
+    """
+    Retorna uma nova sessão do banco de dados.
 
-# for contact in contacts:
-#     print(contact)
+    Retorna:
+        session (Session): Instância da sessão SQLAlchemy.
+    """
+    return get_session()
 
-# from factories.phone_creator import PhoneCreator
 
-# # phone = PhoneCreator.get_phone()
+def create_contact():
+    """
+    Cria um novo contato e o salva no banco de dados.
+    """
+    contact = ContactCreator.get_instance_contact()
+    DBOperation.save_obj_db(contact, session())
+    print("Contato criado com sucesso!")
 
-# phones = PhoneCreator.creator_new_phone()
-# print(phones)
 
-from factory.email_creator import EmailCreator
+def list_contacts():
+    """
+    Lista todos os contatos armazenados no banco de dados.
+    """
+    contacts = DBOperation.find_objs_db(Contact, session())
+    if contacts:
+        for contact in contacts:
+            print(contact)
+    else:
+        print("@@@ Nenhum contato cadastrado. @@@")
 
-emails = EmailCreator.creator_emails()
-print(emails)
+
+def handle_option(option):
+    """
+    Manipula a opção selecionada pelo usuário.
+    """
+    if option == "1":
+        create_contact()
+    elif option == "2":
+        list_contacts()
+    elif option == "0":
+        print("Encerrando aplicação!")
+        return True
+    else:
+        print("Opção inválida!")
+    return False
+
+
+def app():
+    """
+    Executa o loop principal da aplicação de gerenciamento de contatos.
+
+    Exibe um menu de opções para o usuário e aguarda a seleção
+    de uma das seguintes opções:
+
+    - "1": Criação de um novo contato.
+    - "2": Listagem de todos os contatos.
+    - "0": Encerramento da aplicação.
+
+    O loop continua até que a opção "0" seja selecionada.
+    """
+
+    initialize_system()
+
+    while True:
+        opcao = menu()
+
+        if handle_option(option=opcao):
+            break
+
+        # get_session().close()
+
+
+if __name__ == "__main__":
+    app()

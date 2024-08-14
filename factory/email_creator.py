@@ -101,7 +101,7 @@ class EmailCreator():
         """
 
         return """  # NOVO EMAIL ###################
-        [1] - Adicionar email
+        [1] - Add email
         [0] - Sair
         == > """
 
