@@ -6,18 +6,18 @@ Este é um projeto de uma agenda telefônica implementada em Python. O objetivo 
 
 O projeto está organizado em vários diretórios e arquivos, conforme descrito abaixo:
 
-- **`classes/`**: Contém as classes principais, como `Contact`, `Phone`, `Email`, e `PhoneCreator`, responsáveis por gerenciar as entidades e criar novos objetos.
+- **`classes/`**: Contém as classes principais, como `Contact`, `Phone`, e `Email`, responsáveis por gerenciar as entidades.
 - **`config/`**: Arquivos de configuração do projeto.
 - **`database/`**: Contém classes relacionadas ao gerenciamento de conexões e operações com o banco de dados.
-- **`enums/`**: Define enumerações como `PhonesTypes`, que são utilizadas para categorizar os tipos de telefone.
-- **`factories/`**: Contém fábricas para criação de objetos, incluindo a classe `PhoneCreator`.
+- **`enums/`**: Define enumerações como `PhonesTypes` e `EmailTypes`, que são utilizadas para categorizar os tipos de telefone e emails.
+- **`factories/`**: Contém fábricas para criação de objetos.
 - **`logs/`**: Configuração e armazenamento dos logs gerados pelo sistema.
 - **`util/`**: Contém utilitários e funções auxiliares que suportam o restante do projeto.
 - **`.flake8`**: Configuração do Flake8 para análise de código, incluindo regras de estilo e exclusões.
 - **`.pylintrc`**: Configuração do Pylint para análise estática de código.
 - **`README.md`**: Arquivo de documentação do projeto.
 - **`app.py`**: Script principal para execução do sistema de agenda telefônica.
-- **`main.py`**: Outro ponto de entrada, possivelmente para testes ou funcionalidades específicas.
+- **`main.py`**: Outro ponto de entrada para testes e funcionalidades específicas.
 
 ## Funcionalidades
 
