@@ -154,7 +154,7 @@ class PhoneCreator():
             if option == 1:
                 phone = PhoneCreator.get_phone()
                 phone_list.append(phone)
-                print(f"Telefone {phone.phone_number} adicionado com sucesso.")
+                print(f"Telefone: {phone} adicionado com sucesso.")
             elif option == 0:
                 break
             else:

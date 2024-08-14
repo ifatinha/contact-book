@@ -37,4 +37,5 @@ from factories.phone_creator import PhoneCreator
 
 # phone = PhoneCreator.get_phone()
 
-phone = PhoneCreator.creator_new_phone()
+phones = PhoneCreator.creator_new_phone()
+print(phones)
