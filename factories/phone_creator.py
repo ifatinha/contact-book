@@ -137,10 +137,14 @@ class PhoneCreator():
     @staticmethod
     def creator_new_phone():
         """
-        Permite ao usuário adicionar novos telefones. Continua a pedir a inserção de 
-        telefones até que o usuário escolha sair.
+        Permite ao usuário adicionar novos telefones. Continua a solicitar a inserção de
+        telefones até que o usuário escolha sair. Retorna uma lista com os telefones criados.
+
+        Returns:
+            list: Lista de objetos `Phone` criados pelo usuário.
         """
 
+        phone_list = []
         prompt = PhoneCreator._prompt_add_phone()
 
         while True:
@@ -149,7 +153,11 @@ class PhoneCreator():
 
             if option == 1:
                 phone = PhoneCreator.get_phone()
+                phone_list.append(phone)
+                print(f"Telefone {phone.phone_number} adicionado com sucesso.")
             elif option == 0:
                 break
             else:
                 print("@@@ Opção inválida! @@@")
+
+        return phone_list
