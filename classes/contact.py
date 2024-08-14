@@ -11,6 +11,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from database.db_connection import Base
 
+
 class Contact(Base):
     """
     Classe para mapear os dados de um contato no banco de dados.

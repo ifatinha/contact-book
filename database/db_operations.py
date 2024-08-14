@@ -73,16 +73,16 @@ class DBOperation():
             session = DBOperation.session()
             session.add(obj)
             session.commit()
-            print(f"{obj.__class__.__name__} Cadastrado com sucesso!")
+            print(f"{obj.__class__.__name__} cadastrado com sucesso!")
         except IntegrityError as e:
             session.rollback()
-            print(f"Erro de integridade ao adicionar contato: {e}")
+            print(f"Erro de integridade ao adicionar classe: {e}")
         except OperationalError as e:
             session.rollback()
-            print(f"Erro operacional ao adicionar contato: {e}")
+            print(f"Erro operacional ao adicionar classe: {e}")
         except SQLAlchemyError as e:
             session.rollback()
-            print(f"Erro SQLAlchemy ao adicionar contato: {e}")
+            print(f"Erro SQLAlchemy ao adicionar classe: {e}")
         finally:
             session.close()
 
@@ -111,17 +111,17 @@ class DBOperation():
         except IntegrityError as e:
             if session:
                 session.rollback()
-            print(f"Erro de integridade ao adicionar contato: {e}")
+            print(f"Erro de integridade ao buscar dados: {e}")
             return None
         except OperationalError as e:
             if session:
                 session.rollback()
-            print(f"Erro operacional ao adicionar contato: {e}")
+            print(f"Erro operacional ao buscar dados: {e}")
             return None
         except SQLAlchemyError as e:
             if session:
                 session.rollback()
-            print(f"Erro SQLAlchemy ao adicionar contato: {e}")
+            print(f"Erro SQLAlchemyao buscar dados: {e}")
             return None
         finally:
             if session:
