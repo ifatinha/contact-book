@@ -1152,3 +1152,11 @@ WHERE %(param_1)s = emails.contact_id
 2024-08-14 20:54:40,014 - INFO - Estabelecendo conexão.
 2024-08-14 20:54:40,014 - INFO - Conexão fechada.
 2024-08-14 20:54:40,015 - INFO - Cursor fechado.
+2024-08-14 20:54:54,937 - INFO - package: mysql.connector.plugins
+2024-08-14 20:54:54,937 - INFO - plugin_name: caching_sha2_password
+2024-08-14 20:54:54,938 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 20:54:54,938 - INFO - Conexão bem-sucedida!
+2024-08-14 20:54:54,939 - INFO - O bando de dados 'contact-book' já existe.
+2024-08-14 20:54:54,939 - INFO - Estabelecendo conexão.
+2024-08-14 20:54:54,940 - INFO - Conexão fechada.
+2024-08-14 20:54:54,940 - INFO - Cursor fechado.
