@@ -56,3 +56,61 @@
 2024-08-14 21:12:57,472 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000024590EAE780> being returned to pool
 2024-08-14 21:12:57,473 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000024590EAE780> rollback-on-return
 2024-08-14 21:12:57,473 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000024590EAE780> rollback-on-return
+2024-08-14 21:13:29,876 - INFO - (Contact|contacts) _configure_property(phones, _RelationshipDeclared)
+2024-08-14 21:13:29,876 - INFO - (Contact|contacts) _configure_property(emails, _RelationshipDeclared)
+2024-08-14 21:13:29,876 - INFO - (Contact|contacts) _configure_property(id, Column)
+2024-08-14 21:13:29,877 - INFO - (Contact|contacts) _configure_property(name, Column)
+2024-08-14 21:13:29,877 - INFO - (Contact|contacts) Identified primary key columns: OrderedSet([Column('id', Integer(), table=<contacts>, primary_key=True, nullable=False)])
+2024-08-14 21:13:29,877 - INFO - (Contact|contacts) constructed
+2024-08-14 21:13:29,880 - INFO - (Phone|phones) _configure_property(contact, _RelationshipDeclared)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) _configure_property(id_number, Column)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) _configure_property(country_code, Column)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) _configure_property(ddd, Column)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) _configure_property(phone_number, Column)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) _configure_property(type_number, Column)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) _configure_property(contact_id, Column)
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<phones>, primary_key=True, nullable=False)])
+2024-08-14 21:13:29,881 - INFO - (Phone|phones) constructed
+2024-08-14 21:13:29,884 - INFO - (Email|emails) _configure_property(contact, _RelationshipDeclared)
+2024-08-14 21:13:29,884 - INFO - (Email|emails) _configure_property(id_number, Column)
+2024-08-14 21:13:29,884 - INFO - (Email|emails) _configure_property(email, Column)
+2024-08-14 21:13:29,884 - INFO - (Email|emails) _configure_property(type_email, Column)
+2024-08-14 21:13:29,884 - INFO - (Email|emails) _configure_property(contact_id, Column)
+2024-08-14 21:13:29,884 - INFO - (Email|emails) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<emails>, primary_key=True, nullable=False)])
+2024-08-14 21:13:29,884 - INFO - (Email|emails) constructed
+2024-08-14 21:13:29,975 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0>
+2024-08-14 21:13:29,975 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0>
+2024-08-14 21:13:29,975 - INFO - SELECT DATABASE()
+2024-08-14 21:13:29,975 - INFO - SELECT DATABASE()
+2024-08-14 21:13:29,976 - INFO - [raw sql] {}
+2024-08-14 21:13:29,976 - INFO - [raw sql] {}
+2024-08-14 21:13:29,976 - INFO - SELECT @@sql_mode
+2024-08-14 21:13:29,976 - INFO - SELECT @@sql_mode
+2024-08-14 21:13:29,976 - INFO - [raw sql] {}
+2024-08-14 21:13:29,976 - INFO - [raw sql] {}
+2024-08-14 21:13:29,977 - INFO - SELECT @@lower_case_table_names
+2024-08-14 21:13:29,977 - INFO - SELECT @@lower_case_table_names
+2024-08-14 21:13:29,977 - INFO - [raw sql] {}
+2024-08-14 21:13:29,977 - INFO - [raw sql] {}
+2024-08-14 21:13:29,977 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0> checked out from pool
+2024-08-14 21:13:29,977 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0> checked out from pool
+2024-08-14 21:13:29,977 - INFO - BEGIN (implicit)
+2024-08-14 21:13:29,977 - INFO - BEGIN (implicit)
+2024-08-14 21:13:29,978 - INFO - DESCRIBE `contact-book`.`contacts`
+2024-08-14 21:13:29,978 - INFO - DESCRIBE `contact-book`.`contacts`
+2024-08-14 21:13:29,978 - INFO - [raw sql] {}
+2024-08-14 21:13:29,978 - INFO - [raw sql] {}
+2024-08-14 21:13:29,980 - INFO - DESCRIBE `contact-book`.`phones`
+2024-08-14 21:13:29,980 - INFO - DESCRIBE `contact-book`.`phones`
+2024-08-14 21:13:29,980 - INFO - [raw sql] {}
+2024-08-14 21:13:29,980 - INFO - [raw sql] {}
+2024-08-14 21:13:29,981 - INFO - DESCRIBE `contact-book`.`emails`
+2024-08-14 21:13:29,981 - INFO - DESCRIBE `contact-book`.`emails`
+2024-08-14 21:13:29,981 - INFO - [raw sql] {}
+2024-08-14 21:13:29,981 - INFO - [raw sql] {}
+2024-08-14 21:13:29,983 - INFO - COMMIT
+2024-08-14 21:13:29,983 - INFO - COMMIT
+2024-08-14 21:13:29,983 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0> being returned to pool
+2024-08-14 21:13:29,983 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0> being returned to pool
+2024-08-14 21:13:29,983 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0> rollback-on-return
+2024-08-14 21:13:29,983 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000013C3EFBECF0> rollback-on-return
