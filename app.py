@@ -33,22 +33,10 @@ from database.db_operations import DBOperation
 from factory.contact_creator import ContactCreator
 from classes.contact import Contact
 from database.db_connection import get_session
-from pathlib import Path
-import logging
+from util.logging_config import setup_logging
 
-# Configuração do logging
-log_dir = Path(__file__).resolve().parents[1] / "util"
-sqlalchemy_log_file = log_dir / "sqlalchemy.log"
-# log_dir.mkdir(parents=True, exist_ok=True)
-
-sqlalchemy_logger = logging.getLogger('sqlalchemy')
-sqlalchemy_file_handler = logging.FileHandler(sqlalchemy_log_file)
-sqlalchemy_file_handler.setLevel(logging.DEBUG)
-sqlalchemy_formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
-sqlalchemy_file_handler.setFormatter(sqlalchemy_formatter)
-sqlalchemy_logger.addHandler(sqlalchemy_file_handler)
-sqlalchemy_logger.propagate = False
-sqlalchemy_logger.debug("Sistema de logging configurado corretamente.")
+# Configurar o logging
+setup_logging()
 
 
 def initialize_system():

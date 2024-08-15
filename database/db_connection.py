@@ -12,8 +12,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 from database.config import get_database_url
 
-# Inicializa a conexão com o banco de dados
-
 
 def init_db():
     """

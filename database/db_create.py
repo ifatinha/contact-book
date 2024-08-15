@@ -16,21 +16,16 @@
         se não, cria-o.
     """
 
-from pathlib import Path
-import logging
 from mysql.connector import Error
 import mysql.connector
 import mysql.connector.errorcode
 from database.config import DATABASE_CONFIG
+from util.logging_config import setup_logging
+import logging
 
-# Configuração básica do logging para registrar em um arquivo
-file_path = Path(__file__).resolve().parents[1] / "logs" / "mysql_logs.log"
-
-logging.basicConfig(
-    filename=file_path,
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-)
+# Configuração do loggin
+setup_logging()
+mysql_logger = logging.getLogger('mysql')
 
 
 class DBCreate():

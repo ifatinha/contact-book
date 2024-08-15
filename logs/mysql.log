@@ -1,0 +1,40 @@
+2024-08-14 21:12:57,401 - DEBUG - Building SSL context
+2024-08-14 21:12:57,401 - DEBUG - Building SSL context
+2024-08-14 21:12:57,444 - DEBUG - Switching to SSL
+2024-08-14 21:12:57,444 - DEBUG - Switching to SSL
+2024-08-14 21:12:57,447 - DEBUG - SSL has been enabled
+2024-08-14 21:12:57,447 - DEBUG - SSL has been enabled
+2024-08-14 21:12:57,447 - DEBUG - Starting authorization phase
+2024-08-14 21:12:57,447 - DEBUG - Starting authorization phase
+2024-08-14 21:12:57,447 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-14 21:12:57,447 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-14 21:12:57,447 - INFO - package: mysql.connector.plugins
+2024-08-14 21:12:57,447 - INFO - package: mysql.connector.plugins
+2024-08-14 21:12:57,451 - INFO - plugin_name: caching_sha2_password
+2024-08-14 21:12:57,451 - INFO - plugin_name: caching_sha2_password
+2024-08-14 21:12:57,451 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 21:12:57,451 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 21:12:57,452 - DEBUG - Exchanging further packets
+2024-08-14 21:12:57,452 - DEBUG - Exchanging further packets
+2024-08-14 21:12:57,452 - DEBUG - caching_sha2_password completed succesfully
+2024-08-14 21:12:57,452 - DEBUG - caching_sha2_password completed succesfully
+2024-08-14 21:13:29,906 - DEBUG - Building SSL context
+2024-08-14 21:13:29,906 - DEBUG - Building SSL context
+2024-08-14 21:13:29,966 - DEBUG - Switching to SSL
+2024-08-14 21:13:29,966 - DEBUG - Switching to SSL
+2024-08-14 21:13:29,971 - DEBUG - SSL has been enabled
+2024-08-14 21:13:29,971 - DEBUG - SSL has been enabled
+2024-08-14 21:13:29,971 - DEBUG - Starting authorization phase
+2024-08-14 21:13:29,971 - DEBUG - Starting authorization phase
+2024-08-14 21:13:29,971 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-14 21:13:29,971 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-14 21:13:29,971 - INFO - package: mysql.connector.plugins
+2024-08-14 21:13:29,971 - INFO - package: mysql.connector.plugins
+2024-08-14 21:13:29,971 - INFO - plugin_name: caching_sha2_password
+2024-08-14 21:13:29,971 - INFO - plugin_name: caching_sha2_password
+2024-08-14 21:13:29,971 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 21:13:29,971 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-14 21:13:29,972 - DEBUG - Exchanging further packets
+2024-08-14 21:13:29,972 - DEBUG - Exchanging further packets
+2024-08-14 21:13:29,972 - DEBUG - caching_sha2_password completed succesfully
+2024-08-14 21:13:29,972 - DEBUG - caching_sha2_password completed succesfully
