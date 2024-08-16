@@ -21,7 +21,7 @@ def init_db():
         tuple: Contendo o engine do SQLAlchemy e a classe base declarativa.
     """
 
-    engine_temp = create_engine(get_database_url(), echo=True)
+    engine_temp = create_engine(get_database_url(), echo=False)
     base_temp = declarative_base()
     return engine_temp, base_temp
 

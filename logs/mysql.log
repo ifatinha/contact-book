@@ -38,3 +38,63 @@
 2024-08-14 21:13:29,972 - DEBUG - Exchanging further packets
 2024-08-14 21:13:29,972 - DEBUG - caching_sha2_password completed succesfully
 2024-08-14 21:13:29,972 - DEBUG - caching_sha2_password completed succesfully
+2024-08-15 21:16:25,971 - DEBUG - Building SSL context
+2024-08-15 21:16:25,971 - DEBUG - Building SSL context
+2024-08-15 21:16:26,025 - DEBUG - Switching to SSL
+2024-08-15 21:16:26,025 - DEBUG - Switching to SSL
+2024-08-15 21:16:26,036 - DEBUG - SSL has been enabled
+2024-08-15 21:16:26,036 - DEBUG - SSL has been enabled
+2024-08-15 21:16:26,036 - DEBUG - Starting authorization phase
+2024-08-15 21:16:26,036 - DEBUG - Starting authorization phase
+2024-08-15 21:16:26,036 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-15 21:16:26,036 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-15 21:16:26,036 - INFO - package: mysql.connector.plugins
+2024-08-15 21:16:26,036 - INFO - package: mysql.connector.plugins
+2024-08-15 21:16:26,036 - INFO - plugin_name: caching_sha2_password
+2024-08-15 21:16:26,036 - INFO - plugin_name: caching_sha2_password
+2024-08-15 21:16:26,036 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-15 21:16:26,036 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-15 21:16:26,038 - DEBUG - Exchanging further packets
+2024-08-15 21:16:26,038 - DEBUG - Exchanging further packets
+2024-08-15 21:16:26,039 - DEBUG - caching_sha2_password completed succesfully
+2024-08-15 21:16:26,039 - DEBUG - caching_sha2_password completed succesfully
+2024-08-15 21:17:21,264 - DEBUG - Building SSL context
+2024-08-15 21:17:21,264 - DEBUG - Building SSL context
+2024-08-15 21:17:21,298 - DEBUG - Switching to SSL
+2024-08-15 21:17:21,298 - DEBUG - Switching to SSL
+2024-08-15 21:17:21,301 - DEBUG - SSL has been enabled
+2024-08-15 21:17:21,301 - DEBUG - SSL has been enabled
+2024-08-15 21:17:21,301 - DEBUG - Starting authorization phase
+2024-08-15 21:17:21,301 - DEBUG - Starting authorization phase
+2024-08-15 21:17:21,301 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-15 21:17:21,301 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-15 21:17:21,301 - INFO - package: mysql.connector.plugins
+2024-08-15 21:17:21,301 - INFO - package: mysql.connector.plugins
+2024-08-15 21:17:21,301 - INFO - plugin_name: caching_sha2_password
+2024-08-15 21:17:21,301 - INFO - plugin_name: caching_sha2_password
+2024-08-15 21:17:21,301 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-15 21:17:21,301 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-15 21:17:21,303 - DEBUG - Exchanging further packets
+2024-08-15 21:17:21,303 - DEBUG - Exchanging further packets
+2024-08-15 21:17:21,303 - DEBUG - caching_sha2_password completed succesfully
+2024-08-15 21:17:21,303 - DEBUG - caching_sha2_password completed succesfully
+2024-08-15 21:20:14,263 - DEBUG - Building SSL context
+2024-08-15 21:20:14,263 - DEBUG - Building SSL context
+2024-08-15 21:20:14,301 - DEBUG - Switching to SSL
+2024-08-15 21:20:14,301 - DEBUG - Switching to SSL
+2024-08-15 21:20:14,305 - DEBUG - SSL has been enabled
+2024-08-15 21:20:14,305 - DEBUG - SSL has been enabled
+2024-08-15 21:20:14,305 - DEBUG - Starting authorization phase
+2024-08-15 21:20:14,305 - DEBUG - Starting authorization phase
+2024-08-15 21:20:14,305 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-15 21:20:14,305 - DEBUG - The provided initial strategy is caching_sha2_password
+2024-08-15 21:20:14,305 - INFO - package: mysql.connector.plugins
+2024-08-15 21:20:14,305 - INFO - package: mysql.connector.plugins
+2024-08-15 21:20:14,305 - INFO - plugin_name: caching_sha2_password
+2024-08-15 21:20:14,305 - INFO - plugin_name: caching_sha2_password
+2024-08-15 21:20:14,305 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-15 21:20:14,305 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-08-15 21:20:14,305 - DEBUG - Exchanging further packets
+2024-08-15 21:20:14,305 - DEBUG - Exchanging further packets
+2024-08-15 21:20:14,306 - DEBUG - caching_sha2_password completed succesfully
+2024-08-15 21:20:14,306 - DEBUG - caching_sha2_password completed succesfully

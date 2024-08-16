@@ -28,7 +28,7 @@ setup_logging()
 mysql_logger = logging.getLogger('mysql')
 
 
-class DBCreate():
+class DBCreated():
 
     """
     Classe para gerenciamento da criação e conexão com um banco de dados MySQL.
@@ -88,7 +88,7 @@ class DBCreate():
             db_name (str): Nome do banco de dados a ser verificado e possivelmente criado.
         """
 
-        conn = DBCreate.get_connect()
+        conn = DBCreated.get_connect()
 
         if conn is None:
             logging.error("Não foi possível estabelecer uma conexão com o MySQL.")
@@ -116,5 +116,5 @@ class DBCreate():
         finally:
             if cursor is not None:
                 cursor.close()
-                DBCreate.get_close(conn)
+                DBCreated.get_close(conn)
                 logging.info("Cursor fechado.")

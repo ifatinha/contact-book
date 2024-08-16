@@ -6,7 +6,7 @@ para a aplicação de gerenciamento de contatos. Ele inclui a verificação da
 existência do banco de dados e a criação das tabelas se necessário.
 """
 
-from database.db_create import DBCreate
+from database.db_created import DBCreated
 from database.db_connection import engine, Base
 
 # Variável global para rastrear se o banco de dados já foi criado
@@ -25,7 +25,7 @@ def initialize_database() -> None:
     global DATABASE_INITIALIZED
 
     if not DATABASE_INITIALIZED:
-        DBCreate.check_and_create_database("contact-book")
+        DBCreated.check_and_create_database("contact-book")
         DATABASE_INITIALIZED = True
 
 

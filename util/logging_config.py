@@ -41,4 +41,5 @@ def setup_logging():
     mysql_logger.propagate = False
 
     # Configurar o nível do logger root para evitar logs no terminal
+    logging.getLogger('sqlalchemy.engine').setLevel(logging.WARNING)
     logging.basicConfig(level=logging.CRITICAL)  # Define o nível do logger root para CRITICAL
