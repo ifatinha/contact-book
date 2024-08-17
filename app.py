@@ -116,7 +116,7 @@ def app():
         if handle_option(option=opcao):
             break
 
-        # get_session().close()
+    get_session().close()
 
 
 if __name__ == "__main__":

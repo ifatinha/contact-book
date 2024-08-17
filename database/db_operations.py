@@ -109,7 +109,3 @@ class DBOperation():
                 session.rollback()
             print(f"Erro SQLAlchemyao buscar dados: {e}")
             return None
-        finally:
-            if session:
-                # session.close()
-                pass

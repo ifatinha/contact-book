@@ -19,8 +19,8 @@ Aviso:
 
 DATABASE_CONFIG = {
     "user": "root",
-    # "password": "admin",
-    "password": "12345",
+    "password": "admin",
+    # "password": "12345",
     "host": "127.0.0.1",
     "database": "contact-book"
 }
