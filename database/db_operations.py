@@ -39,11 +39,15 @@ class DBOperation():
 
     Métodos Estáticos:
         session: Cria e retorna uma nova sessão do banco de dados.
-        object_save_db: Adiciona um objeto à base de dados e faz commit.
+        save_contact: Adiciona um contato à base de dados e faz commit.
+        find_contacts: Recupera todos os contatos do banco de dados.
+        find_contact: Recupera um contato do banco de dados fazendo a consulta pelo nome.
+        update_contact: Atualiza os dados de um contao.
+        delete_contact: Deleta um contato.
     """
 
     @staticmethod
-    def save_obj_db(obj, session):
+    def save_contact(obj, session):
         """
         Adiciona um objeto à base de dados e faz commit.
 
@@ -73,16 +77,16 @@ class DBOperation():
             print(f"Erro SQLAlchemy ao adicionar classe: {e}")
 
     @staticmethod
-    def find_objs_db(model, session):
+    def find_contacts(Contact, session):
         """
-        Busca todos os objetos de uma tabela do banco de dados.
+        Busca todos os contatos do banco de dados.
 
         Parâmetros:
-            model (Base): Classe do modelo a ser consultado,
+            Contact (Base): Classe a ser consultado,
             que deve ser uma subclasse de `Base` do SQLAlchemy.
 
         Retorna:
-            list: Lista de instâncias do modelo consultado.
+            list: Lista de instâncias de Contacts consultado.
 
         Exceções:
             Rollback e exibição de mensagem de erro em caso de falha na consulta.
@@ -92,7 +96,7 @@ class DBOperation():
         """
         try:
 
-            return session.query(model).all()
+            return session.query(Contact).all()
 
         except IntegrityError as e:
             if session:
@@ -110,6 +114,7 @@ class DBOperation():
             print(f"Erro SQLAlchemyao buscar dados: {e}")
             return None
 
+    @staticmethod
     def find_contact(Contact, nome, session):
         """
         Descrição:
@@ -144,4 +149,31 @@ class DBOperation():
             if session:
                 session.rollback()
             print(f"Erro SQLAlchemyao buscar dados: {e}")
+            return None
+
+    @staticmethod
+    def update_contact(contato, session):
+        pass
+
+    @staticmethod
+    def delete_contact(contato, session):
+        try:
+            session.delete(contato)
+            session.commit()
+            print("@@@ Contato excluido com sucesso! @@@")
+            return True
+        except IntegrityError as e:
+            if session:
+                session.rollback()
+            print(f"Erro de integridade ao excluir dados: {e}")
+            return None
+        except OperationalError as e:
+            if session:
+                session.rollback()
+            print(f"Erro operacional ao excluir dados: {e}")
+            return None
+        except SQLAlchemyError as e:
+            if session:
+                session.rollback()
+            print(f"Erro SQLAlchemy ao excluir dados: {e}")
             return None

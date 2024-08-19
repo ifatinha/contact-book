@@ -43,4 +43,4 @@ class Contact(Base):
         """
         phones_str = ", ".join(str(phone) for phone in self.phones) if self.phones else "Nenhum telefone"
         emails_str = ", ".join(str(email) for email in self.emails) if self.emails else "Nenhum e-mail"
-        return f"Nome: {self.name}, Telefones: [{phones_str}], E-mails: [{emails_str}]"
+        return f"{self.id}. {self.name}\n Telefones: [{phones_str}]\n E-mails: [{emails_str}]"

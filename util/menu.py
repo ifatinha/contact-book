@@ -22,6 +22,8 @@ def menu():
     [1] Novo Contato
     [2] Listar Contatos
     [3] Buscar contato
+    [4] Atualizar Contato
+    [5] Deletar Contato
     [0] Sair
     => """
 

@@ -3,7 +3,7 @@ Este módulo fornece uma função utilitária para solicitar e validar entradas 
 
 Funções:
     - get_user_input(prompt): Solicita uma entrada numérica do usuário e a converte em um número inteiro.
-    
+  
     O módulo é projetado para simplificar a captura de entrada de usuário em forma de números inteiros,
     tratando de forma adequada os erros de conversão e fornecendo feedback ao usuário em caso de entradas inválidas.
 """

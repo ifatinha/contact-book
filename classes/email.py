@@ -26,7 +26,7 @@ class Email(Base):
 
     __tablename__ = 'emails'
 
-    id_number = Column(Integer, primary_key=True, autoincrement=True)
+    id_email = Column(Integer, primary_key=True, autoincrement=True)
     email = Column(String(120), nullable=False)
     type_email = Column(SQLAEnum(EmailTypes), default=EmailTypes.PERSONAL, nullable=False)
     contact_id = Column(Integer, ForeignKey('contacts.id'))
@@ -34,7 +34,7 @@ class Email(Base):
 
     def __repr__(self) -> str:
         return (
-            f"<Email(id_number={self.id_number}, email={self.email}, "
+            f"<Email(id_email={self.id_email}, email={self.email}, "
             f"type_email={self.type_email.name}, contact_id={self.contact_id})>"
         )
 
@@ -45,4 +45,4 @@ class Email(Base):
 
         Exemplo: joao.silva@example.com - PESOAL
         """
-        return f"{self.email} - {self.type_email.value}"
+        return f"{self.id_email}. ({self.email} - {self.type_email.value})"

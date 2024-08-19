@@ -1,139 +1,43 @@
 """
-Módulo de Gerenciamento de Contatos
+Este módulo define a função `application`, que inicializa e executa o aplicativo.
 
-Este módulo implementa a aplicação de gerenciamento de contatos, proporcionando
-um loop principal que permite ao usuário interagir com o sistema por meio de um menu.
+O módulo importa a função `app` do módulo `util.manager_app` e a utiliza para iniciar o aplicativo.
 
-O menu oferece opções para criar um novo contato, buscar um contato, editar, listar contatos existentes,
-ou encerrar a aplicação.
+A função `application` é chamada se este módulo for executado como o script principal.
 
-Funções:
---------
-app() -> None
-    Executa o loop principal da aplicação de gerenciamento de contatos. Exibe
-    um menu de opções para o usuário e aguarda a seleção, executando ações
-    correspondentes com base na escolha.
+Exemplo:
+    Se executado diretamente:
+        $ python nome_do_modulo.py
+    O aplicativo será inicializado e executado.
 
-Uso:
------
-    Para executar a aplicação, use o seguinte comando:
-
-    python main.py
-
-    O menu será exibido, permitindo ao usuário selecionar entre criar um novo
-    contato, listar contatos, ou encerrar a aplicação.
+Módulos Importados:
+    app (from util.manager_app): Função responsável por iniciar o aplicativo.
 """
 
-# python -m pip freeze > config/requirements.txt
-# python -m pip install -r config/requirements.txt
 
-from util.menu import menu
-from database.db_initializer import initialize_database, create_tables
-from database.db_operations import DBOperation
-from factory.contact_creator import ContactCreator
-from classes.contact import Contact
-from database.db_connection import get_session
-from util.logging_config import setup_logging
-
-# Configurar o logging
-setup_logging()
+from util.manager_app import app
 
 
-def initialize_system():
+def application():
     """
-    Inicializa o banco de dados e as tabelas.
-    """
-    initialize_database()
-    create_tables()
+    Inicializa e executa o aplicativo.
 
+    Esta função chama a função `app` importada do módulo `util.manager_app`, que é responsável por
+    configurar e iniciar o aplicativo.
 
-def session():
-    """
-    Retorna uma nova sessão do banco de dados.
+    Quando chamada, a função `application` prepara o aplicativo para execução, garantindo que todos
+    os componentes e configurações estejam corretos e prontos para uso.
 
-    Retorna:
-        session (Session): Instância da sessão SQLAlchemy.
-    """
-    return get_session()
+    Exemplo:
+        Se executado diretamente como um script, a função `application` será chamada e o
+        aplicativo será iniciado.
 
-
-def create_contact():
-    """
-    Cria um novo contato e o salva no banco de dados.
-    """
-    contact = ContactCreator.get_instance_contact()
-    DBOperation.save_obj_db(contact, session())
-    print("Contato criado com sucesso!")
-
-
-def list_contacts():
-    """
-    Lista todos os contatos armazenados no banco de dados.
-    """
-    contacts = DBOperation.find_objs_db(Contact, session())
-    if contacts:
-        for contact in contacts:
-            print(contact)
-    else:
-        print("@@@ Nenhum contato cadastrado. @@@")
-
-
-def find_contact():
-    """
-    Buscar um contato armazenado no banco de dados pelo o nome.
-    """
-    name = input("Nome do contato: ")
-    contact = DBOperation.find_contact(Contact, name, session())
-
-    if contact:
-        print(f"Dados do contato: {contact}")
-    else:
-        print("@@@ Contato não encontrado. Tente novamente! @@@")
-
-
-def handle_option(option):
-    """
-    Manipula a opção selecionada pelo usuário.
-    """
-    if option == "1":
-        create_contact()
-    elif option == "2":
-        list_contacts()
-    elif option == "3":
-        find_contact()
-    elif option == "0":
-        print("Encerrando aplicação!")
-        return True
-    else:
-        print("Opção inválida!")
-    return False
-
-
-def app():
-    """
-    Executa o loop principal da aplicação de gerenciamento de contatos.
-
-    Exibe um menu de opções para o usuário e aguarda a seleção
-    de uma das seguintes opções:
-
-    - "1": Criação de um novo contato.
-    - "2": Listagem de todos os contatos.
-    - "3": Buscar um contato.
-    - "0": Encerramento da aplicação.
-
-    O loop continua até que a opção "0" seja selecionada.
+    Observações:
+        Esta função deve ser chamada apenas quando o módulo é executado como o script principal.
     """
 
-    initialize_system()
-
-    while True:
-        opcao = menu()
-
-        if handle_option(option=opcao):
-            break
-
-    get_session().close()
+    app()
 
 
 if __name__ == "__main__":
-    app()
+    application()
