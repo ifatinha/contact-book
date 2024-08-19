@@ -109,3 +109,39 @@ class DBOperation():
                 session.rollback()
             print(f"Erro SQLAlchemyao buscar dados: {e}")
             return None
+
+    def find_contact(Contact, nome, session):
+        """
+        Descrição:
+            A função realiza uma busca no banco de dados por um contato específico,
+            com base no nome fornecido como parâmetro.
+
+        Parâmetros:
+            - Contact (Classe): A classe que representa a tabela de contatos no banco de dados.
+            - parameter (str): O nome do contato que está sendo buscado.
+            - session (Session): A sessão do SQLAlchemy usada para interagir com o banco de dados.
+
+        Retorno:
+            - Contact ou None: Retorna o primeiro contato encontrado que corresponda ao nome fornecido
+            ou None se nenhum contato for encontrado ou se ocorrer um erro.
+        """
+
+        try:
+
+            return session.query(Contact).filter(Contact.name == nome).first()
+
+        except IntegrityError as e:
+            if session:
+                session.rollback()
+            print(f"Erro de integridade ao buscar dados: {e}")
+            return None
+        except OperationalError as e:
+            if session:
+                session.rollback()
+            print(f"Erro operacional ao buscar dados: {e}")
+            return None
+        except SQLAlchemyError as e:
+            if session:
+                session.rollback()
+            print(f"Erro SQLAlchemyao buscar dados: {e}")
+            return None

@@ -78,6 +78,19 @@ def list_contacts():
         print("@@@ Nenhum contato cadastrado. @@@")
 
 
+def find_contact():
+    """
+    Buscar um contato armazenado no banco de dados pelo o nome.
+    """
+    name = input("Nome do contato: ")
+    contact = DBOperation.find_contact(Contact, name, session())
+
+    if contact:
+        print(f"Dados do contato: {contact}")
+    else:
+        print("@@@ Contato não encontrado. Tente novamente! @@@")
+
+
 def handle_option(option):
     """
     Manipula a opção selecionada pelo usuário.
@@ -86,6 +99,8 @@ def handle_option(option):
         create_contact()
     elif option == "2":
         list_contacts()
+    elif option == "3":
+        find_contact()
     elif option == "0":
         print("Encerrando aplicação!")
         return True
@@ -103,6 +118,7 @@ def app():
 
     - "1": Criação de um novo contato.
     - "2": Listagem de todos os contatos.
+    - "3": Buscar um contato.
     - "0": Encerramento da aplicação.
 
     O loop continua até que a opção "0" seja selecionada.

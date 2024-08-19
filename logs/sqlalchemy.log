@@ -726,3 +726,525 @@
 2024-08-17 07:50:34,608 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{}'
 2024-08-17 07:50:34,618 - DEBUG - set '('getters', <Mapper at 0x13f356ba000; Contact>)' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{'cached_populators': {'new': [], 'quick': [('name', operator.itemgetter(1)), ('id', operator.itemgetter(0))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x13f371f7390; emails>, <_RelationshipDeclared at 0x13f371f72f0; phones>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
 2024-08-17 07:50:34,618 - DEBUG - set '('getters', <Mapper at 0x13f356ba000; Contact>)' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{'cached_populators': {'new': [], 'quick': [('name', operator.itemgetter(1)), ('id', operator.itemgetter(0))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x13f371f7390; emails>, <_RelationshipDeclared at 0x13f371f72f0; phones>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:27,698 - INFO - (Contact|contacts) _configure_property(phones, _RelationshipDeclared)
+2024-08-19 09:24:27,704 - INFO - (Contact|contacts) _configure_property(emails, _RelationshipDeclared)
+2024-08-19 09:24:27,704 - INFO - (Contact|contacts) _configure_property(id, Column)
+2024-08-19 09:24:27,705 - INFO - (Contact|contacts) _configure_property(name, Column)
+2024-08-19 09:24:27,705 - INFO - (Contact|contacts) Identified primary key columns: OrderedSet([Column('id', Integer(), table=<contacts>, primary_key=True, nullable=False)])
+2024-08-19 09:24:27,705 - INFO - (Contact|contacts) constructed
+2024-08-19 09:24:27,718 - INFO - (Phone|phones) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:24:27,718 - INFO - (Phone|phones) _configure_property(id_number, Column)
+2024-08-19 09:24:27,718 - INFO - (Phone|phones) _configure_property(country_code, Column)
+2024-08-19 09:24:27,719 - INFO - (Phone|phones) _configure_property(ddd, Column)
+2024-08-19 09:24:27,719 - INFO - (Phone|phones) _configure_property(phone_number, Column)
+2024-08-19 09:24:27,719 - INFO - (Phone|phones) _configure_property(type_number, Column)
+2024-08-19 09:24:27,719 - INFO - (Phone|phones) _configure_property(contact_id, Column)
+2024-08-19 09:24:27,720 - INFO - (Phone|phones) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<phones>, primary_key=True, nullable=False)])
+2024-08-19 09:24:27,720 - INFO - (Phone|phones) constructed
+2024-08-19 09:24:27,735 - INFO - (Email|emails) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:24:27,735 - INFO - (Email|emails) _configure_property(id_number, Column)
+2024-08-19 09:24:27,735 - INFO - (Email|emails) _configure_property(email, Column)
+2024-08-19 09:24:27,736 - INFO - (Email|emails) _configure_property(type_email, Column)
+2024-08-19 09:24:27,736 - INFO - (Email|emails) _configure_property(contact_id, Column)
+2024-08-19 09:24:27,736 - INFO - (Email|emails) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<emails>, primary_key=True, nullable=False)])
+2024-08-19 09:24:27,736 - INFO - (Email|emails) constructed
+2024-08-19 09:24:28,074 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x00000127C1E999A0>
+2024-08-19 09:24:28,074 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x00000127C1E999A0>
+2024-08-19 09:24:28,077 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> checked out from pool
+2024-08-19 09:24:28,077 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> checked out from pool
+2024-08-19 09:24:28,089 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> being returned to pool
+2024-08-19 09:24:28,089 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> being returned to pool
+2024-08-19 09:24:28,090 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> rollback-on-return
+2024-08-19 09:24:28,090 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> rollback-on-return
+2024-08-19 09:24:43,186 - INFO - (Contact|contacts) _post_configure_properties() started
+2024-08-19 09:24:43,186 - INFO - (Contact|contacts) _post_configure_properties() started
+2024-08-19 09:24:43,187 - INFO - (Contact|contacts) initialize prop phones
+2024-08-19 09:24:43,187 - INFO - (Contact|contacts) initialize prop phones
+2024-08-19 09:24:43,188 - INFO - Contact.phones setup primary join contacts.id = phones.contact_id
+2024-08-19 09:24:43,188 - INFO - Contact.phones setup primary join contacts.id = phones.contact_id
+2024-08-19 09:24:43,189 - INFO - Contact.phones setup secondary join None
+2024-08-19 09:24:43,189 - INFO - Contact.phones setup secondary join None
+2024-08-19 09:24:43,189 - INFO - Contact.phones synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:24:43,189 - INFO - Contact.phones synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:24:43,189 - INFO - Contact.phones secondary synchronize pairs []
+2024-08-19 09:24:43,189 - INFO - Contact.phones secondary synchronize pairs []
+2024-08-19 09:24:43,189 - INFO - Contact.phones local/remote pairs [(contacts.id / phones.contact_id)]
+2024-08-19 09:24:43,189 - INFO - Contact.phones local/remote pairs [(contacts.id / phones.contact_id)]
+2024-08-19 09:24:43,190 - INFO - Contact.phones remote columns [phones.contact_id]
+2024-08-19 09:24:43,190 - INFO - Contact.phones remote columns [phones.contact_id]
+2024-08-19 09:24:43,190 - INFO - Contact.phones local columns [contacts.id]
+2024-08-19 09:24:43,190 - INFO - Contact.phones local columns [contacts.id]
+2024-08-19 09:24:43,190 - INFO - Contact.phones relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:24:43,190 - INFO - Contact.phones relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:24:43,191 - INFO - Contact.phones lazy loading clause :param_1 = phones.contact_id
+2024-08-19 09:24:43,191 - INFO - Contact.phones lazy loading clause :param_1 = phones.contact_id
+2024-08-19 09:24:43,208 - INFO - (Contact|contacts) initialize prop emails
+2024-08-19 09:24:43,208 - INFO - (Contact|contacts) initialize prop emails
+2024-08-19 09:24:43,211 - INFO - Contact.emails setup primary join contacts.id = emails.contact_id
+2024-08-19 09:24:43,211 - INFO - Contact.emails setup primary join contacts.id = emails.contact_id
+2024-08-19 09:24:43,212 - INFO - Contact.emails setup secondary join None
+2024-08-19 09:24:43,212 - INFO - Contact.emails setup secondary join None
+2024-08-19 09:24:43,213 - INFO - Contact.emails synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:24:43,213 - INFO - Contact.emails synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:24:43,213 - INFO - Contact.emails secondary synchronize pairs []
+2024-08-19 09:24:43,213 - INFO - Contact.emails secondary synchronize pairs []
+2024-08-19 09:24:43,213 - INFO - Contact.emails local/remote pairs [(contacts.id / emails.contact_id)]
+2024-08-19 09:24:43,213 - INFO - Contact.emails local/remote pairs [(contacts.id / emails.contact_id)]
+2024-08-19 09:24:43,214 - INFO - Contact.emails remote columns [emails.contact_id]
+2024-08-19 09:24:43,214 - INFO - Contact.emails remote columns [emails.contact_id]
+2024-08-19 09:24:43,214 - INFO - Contact.emails local columns [contacts.id]
+2024-08-19 09:24:43,214 - INFO - Contact.emails local columns [contacts.id]
+2024-08-19 09:24:43,214 - INFO - Contact.emails relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:24:43,214 - INFO - Contact.emails relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:24:43,215 - INFO - Contact.emails lazy loading clause :param_1 = emails.contact_id
+2024-08-19 09:24:43,215 - INFO - Contact.emails lazy loading clause :param_1 = emails.contact_id
+2024-08-19 09:24:43,216 - INFO - (Contact|contacts) initialize prop id
+2024-08-19 09:24:43,216 - INFO - (Contact|contacts) initialize prop id
+2024-08-19 09:24:43,216 - INFO - (Contact|contacts) initialize prop name
+2024-08-19 09:24:43,216 - INFO - (Contact|contacts) initialize prop name
+2024-08-19 09:24:43,217 - INFO - (Contact|contacts) _post_configure_properties() complete
+2024-08-19 09:24:43,217 - INFO - (Contact|contacts) _post_configure_properties() complete
+2024-08-19 09:24:43,217 - INFO - (Phone|phones) _post_configure_properties() started
+2024-08-19 09:24:43,217 - INFO - (Phone|phones) _post_configure_properties() started
+2024-08-19 09:24:43,217 - INFO - (Phone|phones) initialize prop contact
+2024-08-19 09:24:43,217 - INFO - (Phone|phones) initialize prop contact
+2024-08-19 09:24:43,218 - INFO - Phone.contact setup primary join contacts.id = phones.contact_id
+2024-08-19 09:24:43,218 - INFO - Phone.contact setup primary join contacts.id = phones.contact_id
+2024-08-19 09:24:43,218 - INFO - Phone.contact setup secondary join None
+2024-08-19 09:24:43,218 - INFO - Phone.contact setup secondary join None
+2024-08-19 09:24:43,218 - INFO - Phone.contact synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:24:43,218 - INFO - Phone.contact synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:24:43,219 - INFO - Phone.contact secondary synchronize pairs []
+2024-08-19 09:24:43,219 - INFO - Phone.contact secondary synchronize pairs []
+2024-08-19 09:24:43,219 - INFO - Phone.contact local/remote pairs [(phones.contact_id / contacts.id)]
+2024-08-19 09:24:43,219 - INFO - Phone.contact local/remote pairs [(phones.contact_id / contacts.id)]
+2024-08-19 09:24:43,219 - INFO - Phone.contact remote columns [contacts.id]
+2024-08-19 09:24:43,219 - INFO - Phone.contact remote columns [contacts.id]
+2024-08-19 09:24:43,219 - INFO - Phone.contact local columns [phones.contact_id]
+2024-08-19 09:24:43,219 - INFO - Phone.contact local columns [phones.contact_id]
+2024-08-19 09:24:43,219 - INFO - Phone.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:24:43,219 - INFO - Phone.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:24:43,220 - INFO - Phone.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:24:43,220 - INFO - Phone.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:24:43,222 - INFO - Phone.contact will use Session.get() to optimize instance loads
+2024-08-19 09:24:43,222 - INFO - Phone.contact will use Session.get() to optimize instance loads
+2024-08-19 09:24:43,222 - INFO - (Phone|phones) initialize prop id_number
+2024-08-19 09:24:43,222 - INFO - (Phone|phones) initialize prop id_number
+2024-08-19 09:24:43,222 - INFO - (Phone|phones) initialize prop country_code
+2024-08-19 09:24:43,222 - INFO - (Phone|phones) initialize prop country_code
+2024-08-19 09:24:43,223 - INFO - (Phone|phones) initialize prop ddd
+2024-08-19 09:24:43,223 - INFO - (Phone|phones) initialize prop ddd
+2024-08-19 09:24:43,223 - INFO - (Phone|phones) initialize prop phone_number
+2024-08-19 09:24:43,223 - INFO - (Phone|phones) initialize prop phone_number
+2024-08-19 09:24:43,223 - INFO - (Phone|phones) initialize prop type_number
+2024-08-19 09:24:43,223 - INFO - (Phone|phones) initialize prop type_number
+2024-08-19 09:24:43,224 - INFO - (Phone|phones) initialize prop contact_id
+2024-08-19 09:24:43,224 - INFO - (Phone|phones) initialize prop contact_id
+2024-08-19 09:24:43,224 - INFO - (Phone|phones) _post_configure_properties() complete
+2024-08-19 09:24:43,224 - INFO - (Phone|phones) _post_configure_properties() complete
+2024-08-19 09:24:43,224 - INFO - (Email|emails) _post_configure_properties() started
+2024-08-19 09:24:43,224 - INFO - (Email|emails) _post_configure_properties() started
+2024-08-19 09:24:43,224 - INFO - (Email|emails) initialize prop contact
+2024-08-19 09:24:43,224 - INFO - (Email|emails) initialize prop contact
+2024-08-19 09:24:43,225 - INFO - Email.contact setup primary join contacts.id = emails.contact_id
+2024-08-19 09:24:43,225 - INFO - Email.contact setup primary join contacts.id = emails.contact_id
+2024-08-19 09:24:43,226 - INFO - Email.contact setup secondary join None
+2024-08-19 09:24:43,226 - INFO - Email.contact setup secondary join None
+2024-08-19 09:24:43,226 - INFO - Email.contact synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:24:43,226 - INFO - Email.contact synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:24:43,226 - INFO - Email.contact secondary synchronize pairs []
+2024-08-19 09:24:43,226 - INFO - Email.contact secondary synchronize pairs []
+2024-08-19 09:24:43,226 - INFO - Email.contact local/remote pairs [(emails.contact_id / contacts.id)]
+2024-08-19 09:24:43,226 - INFO - Email.contact local/remote pairs [(emails.contact_id / contacts.id)]
+2024-08-19 09:24:43,226 - INFO - Email.contact remote columns [contacts.id]
+2024-08-19 09:24:43,226 - INFO - Email.contact remote columns [contacts.id]
+2024-08-19 09:24:43,226 - INFO - Email.contact local columns [emails.contact_id]
+2024-08-19 09:24:43,226 - INFO - Email.contact local columns [emails.contact_id]
+2024-08-19 09:24:43,227 - INFO - Email.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:24:43,227 - INFO - Email.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:24:43,227 - INFO - Email.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:24:43,227 - INFO - Email.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:24:43,228 - INFO - Email.contact will use Session.get() to optimize instance loads
+2024-08-19 09:24:43,228 - INFO - Email.contact will use Session.get() to optimize instance loads
+2024-08-19 09:24:43,228 - INFO - (Email|emails) initialize prop id_number
+2024-08-19 09:24:43,228 - INFO - (Email|emails) initialize prop id_number
+2024-08-19 09:24:43,230 - INFO - (Email|emails) initialize prop email
+2024-08-19 09:24:43,230 - INFO - (Email|emails) initialize prop email
+2024-08-19 09:24:43,230 - INFO - (Email|emails) initialize prop type_email
+2024-08-19 09:24:43,230 - INFO - (Email|emails) initialize prop type_email
+2024-08-19 09:24:43,231 - INFO - (Email|emails) initialize prop contact_id
+2024-08-19 09:24:43,231 - INFO - (Email|emails) initialize prop contact_id
+2024-08-19 09:24:43,231 - INFO - (Email|emails) _post_configure_properties() complete
+2024-08-19 09:24:43,231 - INFO - (Email|emails) _post_configure_properties() complete
+2024-08-19 09:24:56,563 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> checked out from pool
+2024-08-19 09:24:56,563 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> checked out from pool
+2024-08-19 09:24:56,681 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> being returned to pool
+2024-08-19 09:24:56,681 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> being returned to pool
+2024-08-19 09:24:56,682 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> rollback-on-return
+2024-08-19 09:24:56,682 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> rollback-on-return
+2024-08-19 09:24:57,986 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> checked out from pool
+2024-08-19 09:24:57,986 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> checked out from pool
+2024-08-19 09:24:57,988 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{}'
+2024-08-19 09:24:57,988 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{}'
+2024-08-19 09:24:57,990 - DEBUG - set '('getters', <Mapper at 0x127c0c12690; Contact>)' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{'cached_populators': {'new': [], 'quick': [('id', operator.itemgetter(0)), ('name', operator.itemgetter(1))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x127c1eb7390; phones>, <_RelationshipDeclared at 0x127c1eb7430; emails>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:57,990 - DEBUG - set '('getters', <Mapper at 0x127c0c12690; Contact>)' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{'cached_populators': {'new': [], 'quick': [('id', operator.itemgetter(0)), ('name', operator.itemgetter(1))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x127c1eb7390; phones>, <_RelationshipDeclared at 0x127c1eb7430; emails>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:58,002 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Phone(phones)]]' to '{}'
+2024-08-19 09:24:58,002 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Phone(phones)]]' to '{}'
+2024-08-19 09:24:58,006 - DEBUG - set '('getters', <Mapper at 0x127c1ebd1c0; Phone>)' on path 'ORM Path[Mapper[Phone(phones)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('ddd', operator.itemgetter(2)), ('type_number', operator.itemgetter(4)), ('phone_number', operator.itemgetter(3)), ('country_code', operator.itemgetter(1)), ('contact_id', operator.itemgetter(5))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x127c1963a70; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:58,006 - DEBUG - set '('getters', <Mapper at 0x127c1ebd1c0; Phone>)' on path 'ORM Path[Mapper[Phone(phones)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('ddd', operator.itemgetter(2)), ('type_number', operator.itemgetter(4)), ('phone_number', operator.itemgetter(3)), ('country_code', operator.itemgetter(1)), ('contact_id', operator.itemgetter(5))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x127c1963a70; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:58,007 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Email(emails)]]' to '{}'
+2024-08-19 09:24:58,007 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Email(emails)]]' to '{}'
+2024-08-19 09:24:58,010 - DEBUG - set '('getters', <Mapper at 0x127c1ebddc0; Email>)' on path 'ORM Path[Mapper[Email(emails)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('contact_id', operator.itemgetter(3)), ('email', operator.itemgetter(1)), ('type_email', operator.itemgetter(2))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x127c1ec6f30; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:58,010 - DEBUG - set '('getters', <Mapper at 0x127c1ebddc0; Email>)' on path 'ORM Path[Mapper[Email(emails)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('contact_id', operator.itemgetter(3)), ('email', operator.itemgetter(1)), ('type_email', operator.itemgetter(2))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x127c1ec6f30; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:24:59,562 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> being returned to pool
+2024-08-19 09:24:59,562 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> being returned to pool
+2024-08-19 09:24:59,569 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> rollback-on-return
+2024-08-19 09:24:59,569 - DEBUG - Connection <pymysql.connections.Connection object at 0x00000127C1E999A0> rollback-on-return
+2024-08-19 09:25:05,713 - INFO - (Contact|contacts) _configure_property(phones, _RelationshipDeclared)
+2024-08-19 09:25:05,713 - INFO - (Contact|contacts) _configure_property(emails, _RelationshipDeclared)
+2024-08-19 09:25:05,714 - INFO - (Contact|contacts) _configure_property(id, Column)
+2024-08-19 09:25:05,714 - INFO - (Contact|contacts) _configure_property(name, Column)
+2024-08-19 09:25:05,715 - INFO - (Contact|contacts) Identified primary key columns: OrderedSet([Column('id', Integer(), table=<contacts>, primary_key=True, nullable=False)])
+2024-08-19 09:25:05,715 - INFO - (Contact|contacts) constructed
+2024-08-19 09:25:05,722 - INFO - (Phone|phones) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:25:05,722 - INFO - (Phone|phones) _configure_property(id_number, Column)
+2024-08-19 09:25:05,722 - INFO - (Phone|phones) _configure_property(country_code, Column)
+2024-08-19 09:25:05,723 - INFO - (Phone|phones) _configure_property(ddd, Column)
+2024-08-19 09:25:05,723 - INFO - (Phone|phones) _configure_property(phone_number, Column)
+2024-08-19 09:25:05,723 - INFO - (Phone|phones) _configure_property(type_number, Column)
+2024-08-19 09:25:05,723 - INFO - (Phone|phones) _configure_property(contact_id, Column)
+2024-08-19 09:25:05,723 - INFO - (Phone|phones) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<phones>, primary_key=True, nullable=False)])
+2024-08-19 09:25:05,724 - INFO - (Phone|phones) constructed
+2024-08-19 09:25:05,728 - INFO - (Email|emails) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:25:05,728 - INFO - (Email|emails) _configure_property(id_number, Column)
+2024-08-19 09:25:05,728 - INFO - (Email|emails) _configure_property(email, Column)
+2024-08-19 09:25:05,728 - INFO - (Email|emails) _configure_property(type_email, Column)
+2024-08-19 09:25:05,729 - INFO - (Email|emails) _configure_property(contact_id, Column)
+2024-08-19 09:25:05,729 - INFO - (Email|emails) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<emails>, primary_key=True, nullable=False)])
+2024-08-19 09:25:05,729 - INFO - (Email|emails) constructed
+2024-08-19 09:25:05,769 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000022C67AE0710>
+2024-08-19 09:25:05,769 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000022C67AE0710>
+2024-08-19 09:25:05,772 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000022C67AE0710> checked out from pool
+2024-08-19 09:25:05,772 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000022C67AE0710> checked out from pool
+2024-08-19 09:25:05,781 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000022C67AE0710> being returned to pool
+2024-08-19 09:25:05,781 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000022C67AE0710> being returned to pool
+2024-08-19 09:25:05,781 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000022C67AE0710> rollback-on-return
+2024-08-19 09:25:05,781 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000022C67AE0710> rollback-on-return
+2024-08-19 09:25:52,666 - INFO - (Contact|contacts) _configure_property(phones, _RelationshipDeclared)
+2024-08-19 09:25:52,667 - INFO - (Contact|contacts) _configure_property(emails, _RelationshipDeclared)
+2024-08-19 09:25:52,667 - INFO - (Contact|contacts) _configure_property(id, Column)
+2024-08-19 09:25:52,668 - INFO - (Contact|contacts) _configure_property(name, Column)
+2024-08-19 09:25:52,670 - INFO - (Contact|contacts) Identified primary key columns: OrderedSet([Column('id', Integer(), table=<contacts>, primary_key=True, nullable=False)])
+2024-08-19 09:25:52,671 - INFO - (Contact|contacts) constructed
+2024-08-19 09:25:52,681 - INFO - (Phone|phones) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:25:52,682 - INFO - (Phone|phones) _configure_property(id_number, Column)
+2024-08-19 09:25:52,682 - INFO - (Phone|phones) _configure_property(country_code, Column)
+2024-08-19 09:25:52,682 - INFO - (Phone|phones) _configure_property(ddd, Column)
+2024-08-19 09:25:52,683 - INFO - (Phone|phones) _configure_property(phone_number, Column)
+2024-08-19 09:25:52,683 - INFO - (Phone|phones) _configure_property(type_number, Column)
+2024-08-19 09:25:52,684 - INFO - (Phone|phones) _configure_property(contact_id, Column)
+2024-08-19 09:25:52,684 - INFO - (Phone|phones) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<phones>, primary_key=True, nullable=False)])
+2024-08-19 09:25:52,684 - INFO - (Phone|phones) constructed
+2024-08-19 09:25:52,689 - INFO - (Email|emails) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:25:52,689 - INFO - (Email|emails) _configure_property(id_number, Column)
+2024-08-19 09:25:52,689 - INFO - (Email|emails) _configure_property(email, Column)
+2024-08-19 09:25:52,689 - INFO - (Email|emails) _configure_property(type_email, Column)
+2024-08-19 09:25:52,690 - INFO - (Email|emails) _configure_property(contact_id, Column)
+2024-08-19 09:25:52,690 - INFO - (Email|emails) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<emails>, primary_key=True, nullable=False)])
+2024-08-19 09:25:52,690 - INFO - (Email|emails) constructed
+2024-08-19 09:25:52,750 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x000001C86D618560>
+2024-08-19 09:25:52,750 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x000001C86D618560>
+2024-08-19 09:25:52,755 - DEBUG - Connection <pymysql.connections.Connection object at 0x000001C86D618560> checked out from pool
+2024-08-19 09:25:52,755 - DEBUG - Connection <pymysql.connections.Connection object at 0x000001C86D618560> checked out from pool
+2024-08-19 09:25:52,772 - DEBUG - Connection <pymysql.connections.Connection object at 0x000001C86D618560> being returned to pool
+2024-08-19 09:25:52,772 - DEBUG - Connection <pymysql.connections.Connection object at 0x000001C86D618560> being returned to pool
+2024-08-19 09:25:52,773 - DEBUG - Connection <pymysql.connections.Connection object at 0x000001C86D618560> rollback-on-return
+2024-08-19 09:25:52,773 - DEBUG - Connection <pymysql.connections.Connection object at 0x000001C86D618560> rollback-on-return
+2024-08-19 09:25:56,834 - INFO - (Contact|contacts) _post_configure_properties() started
+2024-08-19 09:25:56,834 - INFO - (Contact|contacts) _post_configure_properties() started
+2024-08-19 09:25:56,834 - INFO - (Contact|contacts) initialize prop phones
+2024-08-19 09:25:56,834 - INFO - (Contact|contacts) initialize prop phones
+2024-08-19 09:25:56,837 - INFO - Contact.phones setup primary join contacts.id = phones.contact_id
+2024-08-19 09:25:56,837 - INFO - Contact.phones setup primary join contacts.id = phones.contact_id
+2024-08-19 09:25:56,838 - INFO - Contact.phones setup secondary join None
+2024-08-19 09:25:56,838 - INFO - Contact.phones setup secondary join None
+2024-08-19 09:25:56,838 - INFO - Contact.phones synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:25:56,838 - INFO - Contact.phones synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:25:56,838 - INFO - Contact.phones secondary synchronize pairs []
+2024-08-19 09:25:56,838 - INFO - Contact.phones secondary synchronize pairs []
+2024-08-19 09:25:56,838 - INFO - Contact.phones local/remote pairs [(contacts.id / phones.contact_id)]
+2024-08-19 09:25:56,838 - INFO - Contact.phones local/remote pairs [(contacts.id / phones.contact_id)]
+2024-08-19 09:25:56,838 - INFO - Contact.phones remote columns [phones.contact_id]
+2024-08-19 09:25:56,838 - INFO - Contact.phones remote columns [phones.contact_id]
+2024-08-19 09:25:56,839 - INFO - Contact.phones local columns [contacts.id]
+2024-08-19 09:25:56,839 - INFO - Contact.phones local columns [contacts.id]
+2024-08-19 09:25:56,839 - INFO - Contact.phones relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:25:56,839 - INFO - Contact.phones relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:25:56,841 - INFO - Contact.phones lazy loading clause :param_1 = phones.contact_id
+2024-08-19 09:25:56,841 - INFO - Contact.phones lazy loading clause :param_1 = phones.contact_id
+2024-08-19 09:25:56,843 - INFO - (Contact|contacts) initialize prop emails
+2024-08-19 09:25:56,843 - INFO - (Contact|contacts) initialize prop emails
+2024-08-19 09:25:56,845 - INFO - Contact.emails setup primary join contacts.id = emails.contact_id
+2024-08-19 09:25:56,845 - INFO - Contact.emails setup primary join contacts.id = emails.contact_id
+2024-08-19 09:25:56,845 - INFO - Contact.emails setup secondary join None
+2024-08-19 09:25:56,845 - INFO - Contact.emails setup secondary join None
+2024-08-19 09:25:56,846 - INFO - Contact.emails synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:25:56,846 - INFO - Contact.emails synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:25:56,846 - INFO - Contact.emails secondary synchronize pairs []
+2024-08-19 09:25:56,846 - INFO - Contact.emails secondary synchronize pairs []
+2024-08-19 09:25:56,846 - INFO - Contact.emails local/remote pairs [(contacts.id / emails.contact_id)]
+2024-08-19 09:25:56,846 - INFO - Contact.emails local/remote pairs [(contacts.id / emails.contact_id)]
+2024-08-19 09:25:56,846 - INFO - Contact.emails remote columns [emails.contact_id]
+2024-08-19 09:25:56,846 - INFO - Contact.emails remote columns [emails.contact_id]
+2024-08-19 09:25:56,847 - INFO - Contact.emails local columns [contacts.id]
+2024-08-19 09:25:56,847 - INFO - Contact.emails local columns [contacts.id]
+2024-08-19 09:25:56,847 - INFO - Contact.emails relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:25:56,847 - INFO - Contact.emails relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:25:56,848 - INFO - Contact.emails lazy loading clause :param_1 = emails.contact_id
+2024-08-19 09:25:56,848 - INFO - Contact.emails lazy loading clause :param_1 = emails.contact_id
+2024-08-19 09:25:56,849 - INFO - (Contact|contacts) initialize prop id
+2024-08-19 09:25:56,849 - INFO - (Contact|contacts) initialize prop id
+2024-08-19 09:25:56,850 - INFO - (Contact|contacts) initialize prop name
+2024-08-19 09:25:56,850 - INFO - (Contact|contacts) initialize prop name
+2024-08-19 09:25:56,851 - INFO - (Contact|contacts) _post_configure_properties() complete
+2024-08-19 09:25:56,851 - INFO - (Contact|contacts) _post_configure_properties() complete
+2024-08-19 09:25:56,851 - INFO - (Phone|phones) _post_configure_properties() started
+2024-08-19 09:25:56,851 - INFO - (Phone|phones) _post_configure_properties() started
+2024-08-19 09:25:56,852 - INFO - (Phone|phones) initialize prop contact
+2024-08-19 09:25:56,852 - INFO - (Phone|phones) initialize prop contact
+2024-08-19 09:25:56,853 - INFO - Phone.contact setup primary join contacts.id = phones.contact_id
+2024-08-19 09:25:56,853 - INFO - Phone.contact setup primary join contacts.id = phones.contact_id
+2024-08-19 09:25:56,854 - INFO - Phone.contact setup secondary join None
+2024-08-19 09:25:56,854 - INFO - Phone.contact setup secondary join None
+2024-08-19 09:25:56,855 - INFO - Phone.contact synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:25:56,855 - INFO - Phone.contact synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:25:56,855 - INFO - Phone.contact secondary synchronize pairs []
+2024-08-19 09:25:56,855 - INFO - Phone.contact secondary synchronize pairs []
+2024-08-19 09:25:56,855 - INFO - Phone.contact local/remote pairs [(phones.contact_id / contacts.id)]
+2024-08-19 09:25:56,855 - INFO - Phone.contact local/remote pairs [(phones.contact_id / contacts.id)]
+2024-08-19 09:25:56,855 - INFO - Phone.contact remote columns [contacts.id]
+2024-08-19 09:25:56,855 - INFO - Phone.contact remote columns [contacts.id]
+2024-08-19 09:25:56,856 - INFO - Phone.contact local columns [phones.contact_id]
+2024-08-19 09:25:56,856 - INFO - Phone.contact local columns [phones.contact_id]
+2024-08-19 09:25:56,856 - INFO - Phone.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:25:56,856 - INFO - Phone.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:25:56,857 - INFO - Phone.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:25:56,857 - INFO - Phone.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:25:56,858 - INFO - Phone.contact will use Session.get() to optimize instance loads
+2024-08-19 09:25:56,858 - INFO - Phone.contact will use Session.get() to optimize instance loads
+2024-08-19 09:25:56,859 - INFO - (Phone|phones) initialize prop id_number
+2024-08-19 09:25:56,859 - INFO - (Phone|phones) initialize prop id_number
+2024-08-19 09:25:56,859 - INFO - (Phone|phones) initialize prop country_code
+2024-08-19 09:25:56,859 - INFO - (Phone|phones) initialize prop country_code
+2024-08-19 09:25:56,864 - INFO - (Phone|phones) initialize prop ddd
+2024-08-19 09:25:56,864 - INFO - (Phone|phones) initialize prop ddd
+2024-08-19 09:25:56,864 - INFO - (Phone|phones) initialize prop phone_number
+2024-08-19 09:25:56,864 - INFO - (Phone|phones) initialize prop phone_number
+2024-08-19 09:25:56,865 - INFO - (Phone|phones) initialize prop type_number
+2024-08-19 09:25:56,865 - INFO - (Phone|phones) initialize prop type_number
+2024-08-19 09:25:56,865 - INFO - (Phone|phones) initialize prop contact_id
+2024-08-19 09:25:56,865 - INFO - (Phone|phones) initialize prop contact_id
+2024-08-19 09:25:56,867 - INFO - (Phone|phones) _post_configure_properties() complete
+2024-08-19 09:25:56,867 - INFO - (Phone|phones) _post_configure_properties() complete
+2024-08-19 09:25:56,867 - INFO - (Email|emails) _post_configure_properties() started
+2024-08-19 09:25:56,867 - INFO - (Email|emails) _post_configure_properties() started
+2024-08-19 09:25:56,867 - INFO - (Email|emails) initialize prop contact
+2024-08-19 09:25:56,867 - INFO - (Email|emails) initialize prop contact
+2024-08-19 09:25:56,869 - INFO - Email.contact setup primary join contacts.id = emails.contact_id
+2024-08-19 09:25:56,869 - INFO - Email.contact setup primary join contacts.id = emails.contact_id
+2024-08-19 09:25:56,869 - INFO - Email.contact setup secondary join None
+2024-08-19 09:25:56,869 - INFO - Email.contact setup secondary join None
+2024-08-19 09:25:56,870 - INFO - Email.contact synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:25:56,870 - INFO - Email.contact synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:25:56,870 - INFO - Email.contact secondary synchronize pairs []
+2024-08-19 09:25:56,870 - INFO - Email.contact secondary synchronize pairs []
+2024-08-19 09:25:56,870 - INFO - Email.contact local/remote pairs [(emails.contact_id / contacts.id)]
+2024-08-19 09:25:56,870 - INFO - Email.contact local/remote pairs [(emails.contact_id / contacts.id)]
+2024-08-19 09:25:56,870 - INFO - Email.contact remote columns [contacts.id]
+2024-08-19 09:25:56,870 - INFO - Email.contact remote columns [contacts.id]
+2024-08-19 09:25:56,870 - INFO - Email.contact local columns [emails.contact_id]
+2024-08-19 09:25:56,870 - INFO - Email.contact local columns [emails.contact_id]
+2024-08-19 09:25:56,871 - INFO - Email.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:25:56,871 - INFO - Email.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:25:56,871 - INFO - Email.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:25:56,871 - INFO - Email.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:25:56,872 - INFO - Email.contact will use Session.get() to optimize instance loads
+2024-08-19 09:25:56,872 - INFO - Email.contact will use Session.get() to optimize instance loads
+2024-08-19 09:25:56,872 - INFO - (Email|emails) initialize prop id_number
+2024-08-19 09:25:56,872 - INFO - (Email|emails) initialize prop id_number
+2024-08-19 09:25:56,874 - INFO - (Email|emails) initialize prop email
+2024-08-19 09:25:56,874 - INFO - (Email|emails) initialize prop email
+2024-08-19 09:25:56,875 - INFO - (Email|emails) initialize prop type_email
+2024-08-19 09:25:56,875 - INFO - (Email|emails) initialize prop type_email
+2024-08-19 09:25:56,875 - INFO - (Email|emails) initialize prop contact_id
+2024-08-19 09:25:56,875 - INFO - (Email|emails) initialize prop contact_id
+2024-08-19 09:25:56,875 - INFO - (Email|emails) _post_configure_properties() complete
+2024-08-19 09:25:56,875 - INFO - (Email|emails) _post_configure_properties() complete
+2024-08-19 09:28:01,903 - INFO - (Contact|contacts) _configure_property(phones, _RelationshipDeclared)
+2024-08-19 09:28:01,903 - INFO - (Contact|contacts) _configure_property(emails, _RelationshipDeclared)
+2024-08-19 09:28:01,904 - INFO - (Contact|contacts) _configure_property(id, Column)
+2024-08-19 09:28:01,904 - INFO - (Contact|contacts) _configure_property(name, Column)
+2024-08-19 09:28:01,905 - INFO - (Contact|contacts) Identified primary key columns: OrderedSet([Column('id', Integer(), table=<contacts>, primary_key=True, nullable=False)])
+2024-08-19 09:28:01,905 - INFO - (Contact|contacts) constructed
+2024-08-19 09:28:01,912 - INFO - (Phone|phones) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:28:01,912 - INFO - (Phone|phones) _configure_property(id_number, Column)
+2024-08-19 09:28:01,912 - INFO - (Phone|phones) _configure_property(country_code, Column)
+2024-08-19 09:28:01,913 - INFO - (Phone|phones) _configure_property(ddd, Column)
+2024-08-19 09:28:01,913 - INFO - (Phone|phones) _configure_property(phone_number, Column)
+2024-08-19 09:28:01,913 - INFO - (Phone|phones) _configure_property(type_number, Column)
+2024-08-19 09:28:01,913 - INFO - (Phone|phones) _configure_property(contact_id, Column)
+2024-08-19 09:28:01,913 - INFO - (Phone|phones) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<phones>, primary_key=True, nullable=False)])
+2024-08-19 09:28:01,914 - INFO - (Phone|phones) constructed
+2024-08-19 09:28:01,918 - INFO - (Email|emails) _configure_property(contact, _RelationshipDeclared)
+2024-08-19 09:28:01,918 - INFO - (Email|emails) _configure_property(id_number, Column)
+2024-08-19 09:28:01,919 - INFO - (Email|emails) _configure_property(email, Column)
+2024-08-19 09:28:01,919 - INFO - (Email|emails) _configure_property(type_email, Column)
+2024-08-19 09:28:01,919 - INFO - (Email|emails) _configure_property(contact_id, Column)
+2024-08-19 09:28:01,919 - INFO - (Email|emails) Identified primary key columns: OrderedSet([Column('id_number', Integer(), table=<emails>, primary_key=True, nullable=False)])
+2024-08-19 09:28:01,920 - INFO - (Email|emails) constructed
+2024-08-19 09:28:01,956 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0>
+2024-08-19 09:28:01,956 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0>
+2024-08-19 09:28:01,959 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> checked out from pool
+2024-08-19 09:28:01,959 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> checked out from pool
+2024-08-19 09:28:01,968 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> being returned to pool
+2024-08-19 09:28:01,968 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> being returned to pool
+2024-08-19 09:28:01,969 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> rollback-on-return
+2024-08-19 09:28:01,969 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> rollback-on-return
+2024-08-19 09:28:07,216 - INFO - (Contact|contacts) _post_configure_properties() started
+2024-08-19 09:28:07,216 - INFO - (Contact|contacts) _post_configure_properties() started
+2024-08-19 09:28:07,217 - INFO - (Contact|contacts) initialize prop phones
+2024-08-19 09:28:07,217 - INFO - (Contact|contacts) initialize prop phones
+2024-08-19 09:28:07,219 - INFO - Contact.phones setup primary join contacts.id = phones.contact_id
+2024-08-19 09:28:07,219 - INFO - Contact.phones setup primary join contacts.id = phones.contact_id
+2024-08-19 09:28:07,219 - INFO - Contact.phones setup secondary join None
+2024-08-19 09:28:07,219 - INFO - Contact.phones setup secondary join None
+2024-08-19 09:28:07,220 - INFO - Contact.phones synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:28:07,220 - INFO - Contact.phones synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:28:07,220 - INFO - Contact.phones secondary synchronize pairs []
+2024-08-19 09:28:07,220 - INFO - Contact.phones secondary synchronize pairs []
+2024-08-19 09:28:07,220 - INFO - Contact.phones local/remote pairs [(contacts.id / phones.contact_id)]
+2024-08-19 09:28:07,220 - INFO - Contact.phones local/remote pairs [(contacts.id / phones.contact_id)]
+2024-08-19 09:28:07,221 - INFO - Contact.phones remote columns [phones.contact_id]
+2024-08-19 09:28:07,221 - INFO - Contact.phones remote columns [phones.contact_id]
+2024-08-19 09:28:07,222 - INFO - Contact.phones local columns [contacts.id]
+2024-08-19 09:28:07,222 - INFO - Contact.phones local columns [contacts.id]
+2024-08-19 09:28:07,222 - INFO - Contact.phones relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:28:07,222 - INFO - Contact.phones relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:28:07,223 - INFO - Contact.phones lazy loading clause :param_1 = phones.contact_id
+2024-08-19 09:28:07,223 - INFO - Contact.phones lazy loading clause :param_1 = phones.contact_id
+2024-08-19 09:28:07,224 - INFO - (Contact|contacts) initialize prop emails
+2024-08-19 09:28:07,224 - INFO - (Contact|contacts) initialize prop emails
+2024-08-19 09:28:07,225 - INFO - Contact.emails setup primary join contacts.id = emails.contact_id
+2024-08-19 09:28:07,225 - INFO - Contact.emails setup primary join contacts.id = emails.contact_id
+2024-08-19 09:28:07,225 - INFO - Contact.emails setup secondary join None
+2024-08-19 09:28:07,225 - INFO - Contact.emails setup secondary join None
+2024-08-19 09:28:07,225 - INFO - Contact.emails synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:28:07,225 - INFO - Contact.emails synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:28:07,226 - INFO - Contact.emails secondary synchronize pairs []
+2024-08-19 09:28:07,226 - INFO - Contact.emails secondary synchronize pairs []
+2024-08-19 09:28:07,226 - INFO - Contact.emails local/remote pairs [(contacts.id / emails.contact_id)]
+2024-08-19 09:28:07,226 - INFO - Contact.emails local/remote pairs [(contacts.id / emails.contact_id)]
+2024-08-19 09:28:07,226 - INFO - Contact.emails remote columns [emails.contact_id]
+2024-08-19 09:28:07,226 - INFO - Contact.emails remote columns [emails.contact_id]
+2024-08-19 09:28:07,226 - INFO - Contact.emails local columns [contacts.id]
+2024-08-19 09:28:07,226 - INFO - Contact.emails local columns [contacts.id]
+2024-08-19 09:28:07,226 - INFO - Contact.emails relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:28:07,226 - INFO - Contact.emails relationship direction RelationshipDirection.ONETOMANY
+2024-08-19 09:28:07,227 - INFO - Contact.emails lazy loading clause :param_1 = emails.contact_id
+2024-08-19 09:28:07,227 - INFO - Contact.emails lazy loading clause :param_1 = emails.contact_id
+2024-08-19 09:28:07,227 - INFO - (Contact|contacts) initialize prop id
+2024-08-19 09:28:07,227 - INFO - (Contact|contacts) initialize prop id
+2024-08-19 09:28:07,228 - INFO - (Contact|contacts) initialize prop name
+2024-08-19 09:28:07,228 - INFO - (Contact|contacts) initialize prop name
+2024-08-19 09:28:07,228 - INFO - (Contact|contacts) _post_configure_properties() complete
+2024-08-19 09:28:07,228 - INFO - (Contact|contacts) _post_configure_properties() complete
+2024-08-19 09:28:07,228 - INFO - (Phone|phones) _post_configure_properties() started
+2024-08-19 09:28:07,228 - INFO - (Phone|phones) _post_configure_properties() started
+2024-08-19 09:28:07,229 - INFO - (Phone|phones) initialize prop contact
+2024-08-19 09:28:07,229 - INFO - (Phone|phones) initialize prop contact
+2024-08-19 09:28:07,229 - INFO - Phone.contact setup primary join contacts.id = phones.contact_id
+2024-08-19 09:28:07,229 - INFO - Phone.contact setup primary join contacts.id = phones.contact_id
+2024-08-19 09:28:07,230 - INFO - Phone.contact setup secondary join None
+2024-08-19 09:28:07,230 - INFO - Phone.contact setup secondary join None
+2024-08-19 09:28:07,230 - INFO - Phone.contact synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:28:07,230 - INFO - Phone.contact synchronize pairs [(contacts.id => phones.contact_id)]
+2024-08-19 09:28:07,230 - INFO - Phone.contact secondary synchronize pairs []
+2024-08-19 09:28:07,230 - INFO - Phone.contact secondary synchronize pairs []
+2024-08-19 09:28:07,230 - INFO - Phone.contact local/remote pairs [(phones.contact_id / contacts.id)]
+2024-08-19 09:28:07,230 - INFO - Phone.contact local/remote pairs [(phones.contact_id / contacts.id)]
+2024-08-19 09:28:07,230 - INFO - Phone.contact remote columns [contacts.id]
+2024-08-19 09:28:07,230 - INFO - Phone.contact remote columns [contacts.id]
+2024-08-19 09:28:07,231 - INFO - Phone.contact local columns [phones.contact_id]
+2024-08-19 09:28:07,231 - INFO - Phone.contact local columns [phones.contact_id]
+2024-08-19 09:28:07,231 - INFO - Phone.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:28:07,231 - INFO - Phone.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:28:07,232 - INFO - Phone.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:28:07,232 - INFO - Phone.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:28:07,232 - INFO - Phone.contact will use Session.get() to optimize instance loads
+2024-08-19 09:28:07,232 - INFO - Phone.contact will use Session.get() to optimize instance loads
+2024-08-19 09:28:07,233 - INFO - (Phone|phones) initialize prop id_number
+2024-08-19 09:28:07,233 - INFO - (Phone|phones) initialize prop id_number
+2024-08-19 09:28:07,234 - INFO - (Phone|phones) initialize prop country_code
+2024-08-19 09:28:07,234 - INFO - (Phone|phones) initialize prop country_code
+2024-08-19 09:28:07,234 - INFO - (Phone|phones) initialize prop ddd
+2024-08-19 09:28:07,234 - INFO - (Phone|phones) initialize prop ddd
+2024-08-19 09:28:07,235 - INFO - (Phone|phones) initialize prop phone_number
+2024-08-19 09:28:07,235 - INFO - (Phone|phones) initialize prop phone_number
+2024-08-19 09:28:07,235 - INFO - (Phone|phones) initialize prop type_number
+2024-08-19 09:28:07,235 - INFO - (Phone|phones) initialize prop type_number
+2024-08-19 09:28:07,236 - INFO - (Phone|phones) initialize prop contact_id
+2024-08-19 09:28:07,236 - INFO - (Phone|phones) initialize prop contact_id
+2024-08-19 09:28:07,236 - INFO - (Phone|phones) _post_configure_properties() complete
+2024-08-19 09:28:07,236 - INFO - (Phone|phones) _post_configure_properties() complete
+2024-08-19 09:28:07,236 - INFO - (Email|emails) _post_configure_properties() started
+2024-08-19 09:28:07,236 - INFO - (Email|emails) _post_configure_properties() started
+2024-08-19 09:28:07,237 - INFO - (Email|emails) initialize prop contact
+2024-08-19 09:28:07,237 - INFO - (Email|emails) initialize prop contact
+2024-08-19 09:28:07,238 - INFO - Email.contact setup primary join contacts.id = emails.contact_id
+2024-08-19 09:28:07,238 - INFO - Email.contact setup primary join contacts.id = emails.contact_id
+2024-08-19 09:28:07,239 - INFO - Email.contact setup secondary join None
+2024-08-19 09:28:07,239 - INFO - Email.contact setup secondary join None
+2024-08-19 09:28:07,239 - INFO - Email.contact synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:28:07,239 - INFO - Email.contact synchronize pairs [(contacts.id => emails.contact_id)]
+2024-08-19 09:28:07,239 - INFO - Email.contact secondary synchronize pairs []
+2024-08-19 09:28:07,239 - INFO - Email.contact secondary synchronize pairs []
+2024-08-19 09:28:07,240 - INFO - Email.contact local/remote pairs [(emails.contact_id / contacts.id)]
+2024-08-19 09:28:07,240 - INFO - Email.contact local/remote pairs [(emails.contact_id / contacts.id)]
+2024-08-19 09:28:07,240 - INFO - Email.contact remote columns [contacts.id]
+2024-08-19 09:28:07,240 - INFO - Email.contact remote columns [contacts.id]
+2024-08-19 09:28:07,240 - INFO - Email.contact local columns [emails.contact_id]
+2024-08-19 09:28:07,240 - INFO - Email.contact local columns [emails.contact_id]
+2024-08-19 09:28:07,240 - INFO - Email.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:28:07,240 - INFO - Email.contact relationship direction RelationshipDirection.MANYTOONE
+2024-08-19 09:28:07,241 - INFO - Email.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:28:07,241 - INFO - Email.contact lazy loading clause contacts.id = :param_1
+2024-08-19 09:28:07,246 - INFO - Email.contact will use Session.get() to optimize instance loads
+2024-08-19 09:28:07,246 - INFO - Email.contact will use Session.get() to optimize instance loads
+2024-08-19 09:28:07,247 - INFO - (Email|emails) initialize prop id_number
+2024-08-19 09:28:07,247 - INFO - (Email|emails) initialize prop id_number
+2024-08-19 09:28:07,253 - INFO - (Email|emails) initialize prop email
+2024-08-19 09:28:07,253 - INFO - (Email|emails) initialize prop email
+2024-08-19 09:28:07,253 - INFO - (Email|emails) initialize prop type_email
+2024-08-19 09:28:07,253 - INFO - (Email|emails) initialize prop type_email
+2024-08-19 09:28:07,254 - INFO - (Email|emails) initialize prop contact_id
+2024-08-19 09:28:07,254 - INFO - (Email|emails) initialize prop contact_id
+2024-08-19 09:28:07,254 - INFO - (Email|emails) _post_configure_properties() complete
+2024-08-19 09:28:07,254 - INFO - (Email|emails) _post_configure_properties() complete
+2024-08-19 09:28:07,255 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> checked out from pool
+2024-08-19 09:28:07,255 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EE3CBF0> checked out from pool
+2024-08-19 09:28:07,257 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{}'
+2024-08-19 09:28:07,257 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{}'
+2024-08-19 09:28:07,259 - DEBUG - set '('getters', <Mapper at 0x27d5edcf470; Contact>)' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{'cached_populators': {'new': [], 'quick': [('name', operator.itemgetter(1)), ('id', operator.itemgetter(0))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x27d5eec7390; emails>, <_RelationshipDeclared at 0x27d5eec72f0; phones>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:28:07,259 - DEBUG - set '('getters', <Mapper at 0x27d5edcf470; Contact>)' on path 'ORM Path[Mapper[Contact(contacts)]]' to '{'cached_populators': {'new': [], 'quick': [('name', operator.itemgetter(1)), ('id', operator.itemgetter(0))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x27d5eec7390; emails>, <_RelationshipDeclared at 0x27d5eec72f0; phones>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:28:07,262 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Phone(phones)]]' to '{}'
+2024-08-19 09:28:07,262 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Phone(phones)]]' to '{}'
+2024-08-19 09:28:07,265 - DEBUG - set '('getters', <Mapper at 0x27d5eeccfe0; Phone>)' on path 'ORM Path[Mapper[Phone(phones)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('ddd', operator.itemgetter(2)), ('type_number', operator.itemgetter(4)), ('phone_number', operator.itemgetter(3)), ('country_code', operator.itemgetter(1)), ('contact_id', operator.itemgetter(5))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x27d5eec7d90; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:28:07,265 - DEBUG - set '('getters', <Mapper at 0x27d5eeccfe0; Phone>)' on path 'ORM Path[Mapper[Phone(phones)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('ddd', operator.itemgetter(2)), ('type_number', operator.itemgetter(4)), ('phone_number', operator.itemgetter(3)), ('country_code', operator.itemgetter(1)), ('contact_id', operator.itemgetter(5))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x27d5eec7d90; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:28:07,267 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Email(emails)]]' to '{}'
+2024-08-19 09:28:07,267 - DEBUG - set 'memoized_setups' on path 'ORM Path[Mapper[Email(emails)]]' to '{}'
+2024-08-19 09:28:07,269 - DEBUG - set '('getters', <Mapper at 0x27d5eecdc70; Email>)' on path 'ORM Path[Mapper[Email(emails)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('contact_id', operator.itemgetter(3)), ('email', operator.itemgetter(1)), ('type_email', operator.itemgetter(2))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x27d5eed2e90; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:28:07,269 - DEBUG - set '('getters', <Mapper at 0x27d5eecdc70; Email>)' on path 'ORM Path[Mapper[Email(emails)]]' to '{'cached_populators': {'new': [], 'quick': [('id_number', operator.itemgetter(0)), ('contact_id', operator.itemgetter(3)), ('email', operator.itemgetter(1)), ('type_email', operator.itemgetter(2))], 'deferred': [], 'expire': [], 'existing': [], 'eager': []}, 'todo': [<_RelationshipDeclared at 0x27d5eed2e90; contact>], 'primary_key_getter': operator.itemgetter(slice(0, 1, None))}'
+2024-08-19 09:28:12,547 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000027D5EF504A0>
+2024-08-19 09:28:12,547 - DEBUG - Created new connection <pymysql.connections.Connection object at 0x0000027D5EF504A0>
+2024-08-19 09:28:12,548 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EF504A0> checked out from pool
+2024-08-19 09:28:12,548 - DEBUG - Connection <pymysql.connections.Connection object at 0x0000027D5EF504A0> checked out from pool

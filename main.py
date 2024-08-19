@@ -1,3 +1,0 @@
-"""
-    Modulo de teste
-"""

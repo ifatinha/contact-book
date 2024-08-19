@@ -21,6 +21,7 @@ def menu():
     menu_input = """################ MENU ################
     [1] Novo Contato
     [2] Listar Contatos
+    [3] Buscar contato
     [0] Sair
     => """
 
