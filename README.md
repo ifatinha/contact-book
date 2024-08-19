@@ -6,10 +6,10 @@ Este é um projeto de uma agenda telefônica implementada em Python. O objetivo 
 
 O projeto está organizado em vários diretórios e arquivos, conforme descrito abaixo:
 
-- **`classes/`**: Contém as classes principais, como `Contact`, `Phone`, e `Email`, responsáveis por gerenciar as entidades.
+- **`classes/`**: Contém as classes principais responsáveis por gerenciar as entidades.
 - **`config/`**: Arquivos de configuração do projeto.
 - **`database/`**: Contém classes relacionadas ao gerenciamento de conexões e operações com o banco de dados.
-- **`enums/`**: Define enumerações como `PhonesTypes` e `EmailTypes`, que são utilizadas para categorizar os tipos de telefone e emails.
+- **`enums/`**: Define enumerações que são utilizadas para categorizar os tipos de entidades.
 - **`factories/`**: Contém fábricas para criação de objetos.
 - **`logs/`**: Configuração e armazenamento dos logs gerados pelo sistema.
 - **`util/`**: Contém utilitários e funções auxiliares que suportam o restante do projeto.
