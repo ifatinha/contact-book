@@ -138,7 +138,7 @@ def handle_option(option, session):
     return False
 
 
-def app():
+def initialize_aplication():
     """
     Executa o loop principal da aplicação de gerenciamento de contatos.
 
@@ -165,7 +165,3 @@ def app():
             break
 
     session.close()
-
-
-if __name__ == "__main__":
-    app()

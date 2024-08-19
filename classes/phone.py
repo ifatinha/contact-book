@@ -7,10 +7,11 @@ Classes:
     Phone: Classe para mapear os dados de um telefone no banco de dados.
 """
 
-from sqlalchemy import Column, Integer, String, ForeignKey, Enum as SQLAEnum
+from sqlalchemy import Column, Integer, String, ForeignKey, Enum as SQLAEnum, DateTime
 from database.db_connection import Base
 from enums.phones_types import PhonesTypes
 from sqlalchemy.orm import relationship
+from datetime import datetime
 
 
 class Phone(Base):
@@ -24,6 +25,8 @@ class Phone(Base):
         phone_number (str): Número do telefone.
         type_number (PhonesTypes): Tipo do telefone (Móvel, Residencial, Comercial, etc.).
         contact_id (int): Chave estrangeira associada ao contato.
+        created_at (Date): Data que o Objeto foi criado.
+        update_at (Date): Data da ultima atualização no banco de dados.
     """
 
     __tablename__ = 'phones'
@@ -34,6 +37,8 @@ class Phone(Base):
     type_number = Column(SQLAEnum(PhonesTypes), default=PhonesTypes.MOBILE, nullable=False)
     contact_id = Column(Integer, ForeignKey('contacts.id'))
     contact = relationship("Contact", back_populates="phones")
+    created_at = Column(DateTime, default=datetime.now())
+    update_at = Column(DateTime, default=datetime.now())
 
     def __repr__(self) -> str:
         return (

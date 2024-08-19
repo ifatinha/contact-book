@@ -7,9 +7,10 @@ Classes:
     Contact: Classe para mapear os dados de um contato telefônico no banco de dados.
 """
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from database.db_connection import Base
+from datetime import datetime
 
 
 class Contact(Base):
@@ -21,6 +22,8 @@ class Contact(Base):
         name (str): Nome completo do contato.
         phones (list[Phone]): Lista de números de telefone associados ao contato.
         emails (list[Email]): Lista de e-mails associados ao contato.
+        created_at (Date): Data que o Objeto foi criado.
+        update_at (Date): Data da ultima atualização no banco de dados.
     """
 
     __tablename__ = 'contacts'
@@ -28,6 +31,8 @@ class Contact(Base):
     name = Column(String(120), nullable=False)
     phones = relationship("Phone", back_populates="contact", cascade="all, delete-orphan")
     emails = relationship("Email", back_populates="contact", cascade="all, delete-orphan")
+    created_at = Column(DateTime, default=datetime.now())
+    update_at = Column(DateTime, default=datetime.now())
 
     def __repr__(self) -> str:
         return f"Contact(id={self.id}, name={self.name})"
@@ -44,3 +49,6 @@ class Contact(Base):
         phones_str = ", ".join(str(phone) for phone in self.phones) if self.phones else "Nenhum telefone"
         emails_str = ", ".join(str(email) for email in self.emails) if self.emails else "Nenhum e-mail"
         return f"{self.id}. {self.name}\n Telefones: [{phones_str}]\n E-mails: [{emails_str}]"
+
+    def update():
+        pass

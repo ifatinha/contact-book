@@ -1,7 +1,7 @@
 """
 Este módulo define a função `application`, que inicializa e executa o aplicativo.
 
-O módulo importa a função `app` do módulo `util.manager_app` e a utiliza para iniciar o aplicativo.
+O módulo importa a função `initialize_aplication` do módulo `util.manager_app` e a utiliza para iniciar o aplicativo.
 
 A função `application` é chamada se este módulo for executado como o script principal.
 
@@ -15,7 +15,7 @@ Módulos Importados:
 """
 
 
-from util.manager_app import app
+from util.manager_app import initialize_aplication
 
 
 def application():
@@ -36,7 +36,7 @@ def application():
         Esta função deve ser chamada apenas quando o módulo é executado como o script principal.
     """
 
-    app()
+    initialize_aplication()
 
 
 if __name__ == "__main__":
